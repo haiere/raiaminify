@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#020617">
+  <title>RaiaMinify — Premium Code Minifier</title>
+  <meta name="description" content="RaiaMinify is a modern browser-based code minifier for large code files. Upload, minify, compare sizes, and download optimized results instantly.">
+  <link rel="canonical" href="https://haiere.github.io/raiaminify">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RaiaMinify — Premium Code Minifier">
+  <meta property="og:description" content="Minify large code files in your browser with a fast, elegant, and accessible interface.">
+  <meta property="og:url" content="https://haiere.github.io/raiaminify">
+  <meta property="og:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RaiaMinify — Premium Code Minifier">
+  <meta name="twitter:description" content="Upload, minify, compare, and download optimized code files directly in the browser.">
+  <meta name="twitter:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"RaiaMinify","applicationCategory":"DeveloperApplication","operatingSystem":"Web","description":"A browser-based code minifier for large code files.","url":"https://example.com/raiaminify"}</script>
+  <style>
+    :root{--midnight:#020617;--slate:#94A3B8;--blue:#3B82F6;--panel:rgba(15,23,42,.66);--line:rgba(148,163,184,.18);--text:#E5EEF9;--muted:#AAC0DA;--shadow:0 24px 80px rgba(2,6,23,.42);--radius:24px;--radius-sm:16px;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(1200px 800px at 20% 10%,rgba(59,130,246,.18),transparent 50%),radial-gradient(1000px 700px at 80% 20%,rgba(148,163,184,.12),transparent 45%),var(--midnight);color:var(--text);overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,input{font:inherit}button{border:0;cursor:pointer}::selection{background:rgba(59,130,246,.28)}.skip{position:absolute;left:-999px;top:auto}.skip:focus{left:16px;top:16px;z-index:1000;padding:12px 16px;border-radius:999px;background:#fff;color:#000}.wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}.nav{position:sticky;top:12px;z-index:20;margin-top:12px}.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(15,23,42,.5));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-radius:999px;box-shadow:var(--shadow)}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:0 10px 30px rgba(59,130,246,.18)}.brand strong{display:block;font-size:1rem;letter-spacing:.02em}.brand span{display:block;font-size:.86rem;color:var(--muted)}.nav a.btn{padding:10px 14px;border-radius:999px;background:rgba(59,130,246,.16);border:1px solid rgba(59,130,246,.24)}.hero{padding:28px 0 18px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.panel{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.72),rgba(2,6,23,.55));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.panel::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 35%,rgba(59,130,246,.07));pointer-events:none}.hero-copy{padding:32px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.22);color:#D8E7FF;font-size:.84rem}.hero h1{margin:18px 0 12px;font-size:clamp(2rem,4vw,4.25rem);line-height:1.03;letter-spacing:-.04em}.hero p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.7;max-width:62ch}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.stat{padding:16px;border-radius:18px;background:rgba(148,163,184,.07);border:1px solid rgba(148,163,184,.12)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.86rem;color:var(--muted)}.drop{padding:20px;display:flex;flex-direction:column;gap:16px}.dropzone{min-height:320px;display:grid;place-items:center;text-align:center;padding:24px;border:1.5px dashed rgba(148,163,184,.28);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}.dropzone.drag{border-color:rgba(59,130,246,.7);background:rgba(59,130,246,.08);transform:translateY(-2px);box-shadow:0 0 0 6px rgba(59,130,246,.08)}.dropzone h2{margin:10px 0 8px;font-size:1.35rem}.dropzone p{margin:0;color:var(--muted);line-height:1.6}.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;border-radius:14px;transition:transform .2s ease,opacity .2s ease,background .2s ease,border-color .2s ease;will-change:transform}.btn:focus-visible{outline:3px solid rgba(59,130,246,.55);outline-offset:3px}.btn:hover{transform:translateY(-1px)}.btn.primary{background:linear-gradient(180deg,#4B8AFB,#2563EB);color:#fff;box-shadow:0 16px 30px rgba(37,99,235,.28)}.btn.secondary{background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.16);color:var(--text)}.file{display:none}.content{padding:0 0 32px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}.card{padding:18px;border-radius:20px;background:rgba(15,23,42,.72);border:1px solid var(--line);box-shadow:0 12px 30px rgba(2,6,23,.18)}.card small{display:block;color:var(--muted);margin-bottom:6px}.card strong{font-size:1.08rem}.workspace{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}.toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:16px 18px}.toolbar .meta{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.92rem}.badge{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.14)}.editor{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px}.box{display:flex;flex-direction:column;min-height:420px}.box h3{margin:0 0 12px;font-size:1rem}.code{flex:1;width:100%;resize:none;border:1px solid rgba(148,163,184,.16);background:rgba(2,6,23,.55);color:#D7E6F8;border-radius:18px;padding:16px;line-height:1.6;tab-size:2;outline:none;white-space:pre;overflow:auto}.code:focus{border-color:rgba(59,130,246,.5);box-shadow:0 0 0 4px rgba(59,130,246,.08)}.log{min-height:120px;max-height:180px;white-space:pre-wrap}.footer{padding:10px 0 32px;color:var(--muted);font-size:.92rem;text-align:center}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.toast{position:fixed;right:16px;bottom:16px;z-index:30;max-width:min(420px,calc(100vw - 32px));padding:14px 16px;border-radius:16px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.18);box-shadow:var(--shadow);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease}.toast.show{transform:translateY(0);opacity:1}@media (max-width:960px){.grid,.editor,.cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}.box{min-height:360px}}@media (max-width:720px){.navin{border-radius:22px;align-items:flex-start;flex-direction:column}.grid,.editor,.cards{grid-template-columns:1fr}.hero-copy{padding:22px}.dropzone{min-height:260px}.toolbar{align-items:flex-start}.card,.panel{border-radius:20px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" role="banner">
+  <div class="wrap navin">
+    <a class="brand" href="#top" aria-label="RaiaMinify home">
+      <img src="https://i.postimg.cc/GmWt2wch/H-blue.webp" alt="RaiaMinify logo">
+      <div><strong>RaiaMinify</strong><span>Premium code minifier</span></div>
+    </a>
+    <a class="btn secondary" href="#main">Start Minifying</a>
+  </div>
+</header>
+<main id="main" class="wrap content">
+  <section class="hero grid" id="top">
+    <div class="panel hero-copy">
+      <span class="eyebrow">Fast • Clean • Browser-based</span>
+      <h1>Minify large code files without breaking the logic.</h1>
+      <p>RaiaMinify removes safe whitespace, redundant blank lines, trailing spaces, and optional comments while keeping syntax valid. Compare file size, line count, and download the optimized result instantly.</p>
+      <div class="stats" aria-label="Highlights">
+        <div class="stat"><b>200 KB+</b><span>Designed for large files</span></div>
+        <div class="stat"><b>3,000+ lines</b><span>Responsive processing</span></div>
+        <div class="stat"><b>ES6+</b><span>Lightweight architecture</span></div>
+      </div>
+    </div>
+    <div class="panel drop">
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload code file by drag and drop or file picker">
+        <div>
+          <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="RaiaMinify alternate logo" width="72" height="72" style="margin:0 auto 10px;border-radius:18px;box-shadow:0 12px 26px rgba(59,130,246,.18)">
+          <h2>Drop your code file here</h2>
+          <p>Or choose a file manually. Large files stay responsive during processing.</p>
+          <div class="actions">
+            <button class="btn primary" id="pickBtn" type="button">Choose File</button>
+            <button class="btn secondary" id="minifyBtn" type="button" disabled>Minify File</button>
+          </div>
+          <input class="file" id="fileInput" type="file" accept=".js,.ts,.jsx,.tsx,.css,.html,.htm,.json,.xml,.svg,.md,.txt,.c,.cpp,.h,.hpp,.java,.py,.php,.rb,.go,.rs,.lua,.sh,.sql,.yml,.yaml,.ini,.toml,.mjs,.cjs,.scss,.less,.sass,.vue,.svelte,.astro,.json5,.map" aria-label="Select code file">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="workspace panel" aria-label="Minify workspace">
+    <div class="toolbar">
+      <div class="meta">
+        <span class="badge" id="fileName">No file loaded</span>
+        <span class="badge" id="sizeBefore">Size before: —</span>
+        <span class="badge" id="sizeAfter">Size after: —</span>
+        <span class="badge" id="reduction">Reduction: —</span>
+      </div>
+      <div class="meta">
+        <span class="badge" id="linesBefore">Lines before: —</span>
+        <span class="badge" id="linesAfter">Lines after: —</span>
+      </div>
+    </div>
+    <div class="editor">
+      <div class="box"><h3>Original code</h3><textarea id="inputCode" class="code" spellcheck="false" aria-label="Original code input" placeholder="Your file content appears here or paste code manually."></textarea></div>
+      <div class="box"><h3>Minified code</h3><textarea id="outputCode" class="code" spellcheck="false" readonly aria-label="Minified code output" placeholder="Minified result will appear here."></textarea></div>
+    </div>
+    <div class="toolbar" style="padding-top:0">
+      <div class="meta"><span class="badge" id="status">Ready</span></div>
+      <div class="actions" style="justify-content:flex-end;margin:0">
+        <button class="btn secondary" id="copyBtn" type="button" disabled>Copy Result</button>
+        <button class="btn primary" id="downloadBtn" type="button" disabled>Download Minified File</button>
+      </div>
+    </div>
+    <div class="toolbar" style="padding-top:0">
+      <div style="width:100%">
+        <h3 style="margin:0 0 10px;font-size:1rem">Process log</h3>
+        <textarea id="logBox" class="code log" readonly aria-label="Process log">Load a file to begin.</textarea>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer wrap">RaiaMinify is built for modern browsers with an emphasis on speed, accessibility, and stable large-file handling.</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{const $=s=>document.querySelector(s),dropzone=$('#dropzone'),fileInput=$('#fileInput'),pickBtn=$('#pickBtn'),minifyBtn=$('#minifyBtn'),copyBtn=$('#copyBtn'),downloadBtn=$('#downloadBtn'),inputCode=$('#inputCode'),outputCode=$('#outputCode'),logBox=$('#logBox'),toast=$('#toast'),status=$('#status'),els={fileName:$('#fileName'),sizeBefore:$('#sizeBefore'),sizeAfter:$('#sizeAfter'),reduction:$('#reduction'),linesBefore:$('#linesBefore'),linesAfter:$('#linesAfter')};let currentFile=null,originalText='';const fmt=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB';const lines=s=>s?s.split(/
+|
+|
+/).length:0;const setLog=t=>{logBox.value=t;logBox.scrollTop=logBox.scrollHeight};const show=t=>{toast.textContent=t;toast.classList.add('show');clearTimeout(show._t);show._t=setTimeout(()=>toast.classList.remove('show'),2200)};const setStatus=t=>{status.textContent=t};const updateStats=(before,after)=>{const b=before.length,a=after.length;els.sizeBefore.textContent='Size before: '+fmt(b);els.sizeAfter.textContent='Size after: '+fmt(a);els.reduction.textContent='Reduction: '+(b?((1-a/b)*100).toFixed(2):'0.00')+'%';els.linesBefore.textContent='Lines before: '+lines(before);els.linesAfter.textContent='Lines after: '+lines(after)};const safeMinify=(code,name='file')=>{let out=code.replace(/
+?/g,'
+').replace(/\t/g,' ').replace(/[ \f\u000B]+$/gm,'');const ext=(name.split('.').pop()||'').toLowerCase();const isHtml=/^(html?|xml|svg|vue|svelte|astro)$/i.test(ext),isCss=/^(css|scss|sass|less)$/i.test(ext),isJs=/^(m?js|cjs|jsx|tsx|ts|json5|json|py|php|rb|go|rs|lua|sh|java|c|cpp|h|hpp|ini|toml|yml|yaml|sql)$/i.test(ext);if(isHtml){out=out.replace(/<!--[\\s\\S]*?-->/g,'');out=out.replace(/>\\s+</g,'><').replace(/\
+{3,}/g,'\
+\
+')}else if(isCss){out=out.replace(/\\/\\*[\\s\\S]*?\\*\\//g,'').replace(/\\s*([:;{},])\\s*/g,'$1').replace(/;}/g,'}').replace(/\
+{2,}/g,'\
+')}else if(isJs){out=out.replace(/\\/\\*[\\s\\S]*?\\*\\//g,'');out=out.replace(/(^|[^:\\\\\\\\])\\/\\/.*$/gm,'$1');out=out.replace(/[\\t ]{2,}/g,' ');out=out.replace(/\
+{3,}/g,'\
+\
+')}else{out=out.replace(/\
+{3,}/g,'\
+\
+')}out=out.replace(/[ \\t]+\
+/g,'\
+').replace(/^\\s+$/gm,'').trimEnd();return out};const loadFile=file=>{if(!file)return;currentFile=file;els.fileName.textContent=file.name;setStatus('Reading file');setLog(`Selected: ${file.name}\
+Size: ${fmt(file.size)}\
+Type: ${file.type||'unknown'}\
+Reading content...`);const r=new FileReader();r.onload=e=>{originalText=String(e.target.result||'');inputCode.value=originalText;outputCode.value='';updateStats(originalText,'');minifyBtn.disabled=!originalText;copyBtn.disabled=true;downloadBtn.disabled=true;setStatus('Ready to minify');setLog(`Loaded successfully.\
+Characters: ${originalText.length.toLocaleString()}\
+Lines: ${lines(originalText).toLocaleString()}\
+Press Minify File to process.`);show('File loaded')};r.onerror=()=>{setStatus('Read error');setLog('Failed to read the file.');show('Unable to read file')};r.readAsText(file)};const process=()=>{const source=inputCode.value||originalText;if(!source){show('No code to minify');return}setStatus('Minifying');const started=performance.now();const result=safeMinify(source,currentFile?.name||'file.txt');outputCode.value=result;updateStats(source,result);copyBtn.disabled=!result;downloadBtn.disabled=!result;setStatus('Done');setLog(`Minify complete.\
+Input lines: ${lines(source).toLocaleString()}\
+Output lines: ${lines(result).toLocaleString()}\
+Input size: ${fmt(source.length)}\
+Output size: ${fmt(result.length)}\
+Time: ${(performance.now()-started).toFixed(1)} ms`);show('Minify complete')};pickBtn.onclick=()=>fileInput.click();minifyBtn.onclick=process;copyBtn.onclick=async()=>{if(!outputCode.value)return;await navigator.clipboard.writeText(outputCode.value);show('Copied to clipboard')};downloadBtn.onclick=()=>{if(!outputCode.value)return;const blob=new Blob([outputCode.value],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=(currentFile?.name||'raiaminify')+'.min.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);show('Download started')};fileInput.addEventListener('change',e=>loadFile(e.target.files[0]));dropzone.addEventListener('dragover',e=>{e.preventDefault();dropzone.classList.add('drag')});dropzone.addEventListener('dragleave',()=>dropzone.classList.remove('drag'));dropzone.addEventListener('drop',e=>{e.preventDefault();dropzone.classList.remove('drag');const f=e.dataTransfer.files&&e.dataTransfer.files[0];loadFile(f)});dropzone.addEventListener('click',e=>{if(e.target!==pickBtn&&e.target!==minifyBtn)fileInput.click()});dropzone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click()}});inputCode.addEventListener('input',()=>{minifyBtn.disabled=!inputCode.value;setStatus('Editing');if(inputCode.value)updateStats(inputCode.value,outputCode.value)});setLog('Ready. Upload a large code file or paste code manually.\
+Supported actions: drag & drop, file picker, minify, copy, download.');})();
+</script>
+</body>
+</html>
