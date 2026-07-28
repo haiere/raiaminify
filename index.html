@@ -1,131 +1,2067 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#020617">
-  <title>RaiaMinify — Premium Code Minifier</title>
-  <meta name="description" content="RaiaMinify is a modern browser-based code minifier for large code files. Upload, minify, compare sizes, and download optimized results instantly.">
-  <link rel="canonical" href="https://haiere.github.io/raiaminify">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="RaiaMinify — Premium Code Minifier">
-  <meta property="og:description" content="Minify large code files in your browser with a fast, elegant, and accessible interface.">
-  <meta property="og:url" content="https://haiere.github.io/raiaminify">
-  <meta property="og:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RaiaMinify — Premium Code Minifier">
-  <meta name="twitter:description" content="Upload, minify, compare, and download optimized code files directly in the browser.">
-  <meta name="twitter:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"RaiaMinify","applicationCategory":"DeveloperApplication","operatingSystem":"Web","description":"A browser-based code minifier for large code files.","url":"https://example.com/raiaminify"}</script>
-  <style>
-    :root{--midnight:#020617;--slate:#94A3B8;--blue:#3B82F6;--panel:rgba(15,23,42,.66);--line:rgba(148,163,184,.18);--text:#E5EEF9;--muted:#AAC0DA;--shadow:0 24px 80px rgba(2,6,23,.42);--radius:24px;--radius-sm:16px;--max:1180px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(1200px 800px at 20% 10%,rgba(59,130,246,.18),transparent 50%),radial-gradient(1000px 700px at 80% 20%,rgba(148,163,184,.12),transparent 45%),var(--midnight);color:var(--text);overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,input{font:inherit}button{border:0;cursor:pointer}::selection{background:rgba(59,130,246,.28)}.skip{position:absolute;left:-999px;top:auto}.skip:focus{left:16px;top:16px;z-index:1000;padding:12px 16px;border-radius:999px;background:#fff;color:#000}.wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}.nav{position:sticky;top:12px;z-index:20;margin-top:12px}.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(15,23,42,.5));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-radius:999px;box-shadow:var(--shadow)}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:0 10px 30px rgba(59,130,246,.18)}.brand strong{display:block;font-size:1rem;letter-spacing:.02em}.brand span{display:block;font-size:.86rem;color:var(--muted)}.nav a.btn{padding:10px 14px;border-radius:999px;background:rgba(59,130,246,.16);border:1px solid rgba(59,130,246,.24)}.hero{padding:28px 0 18px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.panel{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.72),rgba(2,6,23,.55));backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.panel::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 35%,rgba(59,130,246,.07));pointer-events:none}.hero-copy{padding:32px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.22);color:#D8E7FF;font-size:.84rem}.hero h1{margin:18px 0 12px;font-size:clamp(2rem,4vw,4.25rem);line-height:1.03;letter-spacing:-.04em}.hero p{margin:0;color:var(--muted);font-size:1.02rem;line-height:1.7;max-width:62ch}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}.stat{padding:16px;border-radius:18px;background:rgba(148,163,184,.07);border:1px solid rgba(148,163,184,.12)}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.86rem;color:var(--muted)}.drop{padding:20px;display:flex;flex-direction:column;gap:16px}.dropzone{min-height:320px;display:grid;place-items:center;text-align:center;padding:24px;border:1.5px dashed rgba(148,163,184,.28);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}.dropzone.drag{border-color:rgba(59,130,246,.7);background:rgba(59,130,246,.08);transform:translateY(-2px);box-shadow:0 0 0 6px rgba(59,130,246,.08)}.dropzone h2{margin:10px 0 8px;font-size:1.35rem}.dropzone p{margin:0;color:var(--muted);line-height:1.6}.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;border-radius:14px;transition:transform .2s ease,opacity .2s ease,background .2s ease,border-color .2s ease;will-change:transform}.btn:focus-visible{outline:3px solid rgba(59,130,246,.55);outline-offset:3px}.btn:hover{transform:translateY(-1px)}.btn.primary{background:linear-gradient(180deg,#4B8AFB,#2563EB);color:#fff;box-shadow:0 16px 30px rgba(37,99,235,.28)}.btn.secondary{background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.16);color:var(--text)}.file{display:none}.content{padding:0 0 32px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}.card{padding:18px;border-radius:20px;background:rgba(15,23,42,.72);border:1px solid var(--line);box-shadow:0 12px 30px rgba(2,6,23,.18)}.card small{display:block;color:var(--muted);margin-bottom:6px}.card strong{font-size:1.08rem}.workspace{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}.toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:16px 18px}.toolbar .meta{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.92rem}.badge{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.14)}.editor{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px}.box{display:flex;flex-direction:column;min-height:420px}.box h3{margin:0 0 12px;font-size:1rem}.code{flex:1;width:100%;resize:none;border:1px solid rgba(148,163,184,.16);background:rgba(2,6,23,.55);color:#D7E6F8;border-radius:18px;padding:16px;line-height:1.6;tab-size:2;outline:none;white-space:pre;overflow:auto}.code:focus{border-color:rgba(59,130,246,.5);box-shadow:0 0 0 4px rgba(59,130,246,.08)}.log{min-height:120px;max-height:180px;white-space:pre-wrap}.footer{padding:10px 0 32px;color:var(--muted);font-size:.92rem;text-align:center}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.toast{position:fixed;right:16px;bottom:16px;z-index:30;max-width:min(420px,calc(100vw - 32px));padding:14px 16px;border-radius:16px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.18);box-shadow:var(--shadow);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease}.toast.show{transform:translateY(0);opacity:1}@media (max-width:960px){.grid,.editor,.cards{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}.box{min-height:360px}}@media (max-width:720px){.navin{border-radius:22px;align-items:flex-start;flex-direction:column}.grid,.editor,.cards{grid-template-columns:1fr}.hero-copy{padding:22px}.dropzone{min-height:260px}.toolbar{align-items:flex-start}.card,.panel{border-radius:20px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>RaiaMinify — Shrink Code, Keep Logic</title>
+    <meta name="description" content="Browser-based code minifier. Drop a JS, CSS, HTML, or JSON file — get a smaller file that behaves exactly the same. Nothing leaves your device." />
+    <meta name="keywords" content="code minifier, javascript minifier, css minifier, html minifier, json minifier, browser minifier, client-side minifier" />
+    <link rel="canonical" href="https://raiaminify.haiere.workers.dev" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/webp" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <meta name="theme-color" content="#020617" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RaiaMinify — Shrink Code, Keep Logic" />
+    <meta property="og:description" content="Browser-based code minifier. Drop a file, get a smaller file that behaves exactly the same. Nothing leaves your device." />
+    <meta property="og:url" content="https://raiaminify.haiere.workers.dev" />
+    <meta property="og:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <meta property="og:site_name" content="RaiaMinify" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RaiaMinify — Shrink Code, Keep Logic" />
+    <meta name="twitter:description" content="Drop a file, get a smaller file that behaves exactly the same. Runs entirely in your browser." />
+    <meta name="twitter:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "RaiaMinify",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any (browser-based)",
+            "description": "Browser-based code minifier for JavaScript, CSS, HTML, and JSON. Runs entirely client-side.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+        /* TOKENS*/
+        :root {
+            --bg-primary: #020617;
+            --bg-secondary: #050B18;
+            --bg-card: rgba(148, 163, 184, 0.05);
+            --border-glass: rgba(148, 163, 184, 0.12);
+            --border-glass-strong: rgba(148, 163, 184, 0.20);
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --accent: #3B82F6;
+            --accent-dark: #2563EB;
+            --accent-light: #60A5FA;
+            --accent-glow: rgba(59, 130, 246, 0.35);
+            --accent-soft: rgba(59, 130, 246, 0.12);
+            --success: #34D399;
+            --success-glow: rgba(52, 211, 153, 0.25);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            --shadow-card: 0 8px 40px -20px rgba(0, 0, 0, 0.7);
+            --shadow-glow: 0 0 60px -24px var(--accent-glow);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+            --nav-height: 68px;
+            --bottom-nav-height: 64px;
+            --max-width: 1180px;
+        }
+
+        /* Reset & Base */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+        body {
+            min-height: 100vh;
+            background: var(--bg-primary);
+            background-image:
+                radial-gradient(1000px 500px at 6% -4%, rgba(59, 130, 246, 0.14), transparent 60%),
+                radial-gradient(800px 400px at 94% 10%, rgba(59, 130, 246, 0.08), transparent 50%),
+                radial-gradient(400px 300px at 50% 80%, rgba(59, 130, 246, 0.04), transparent 50%);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: calc(var(--bottom-nav-height) + 24px);
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: inherit;
+        }
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        ::selection {
+            background: var(--accent);
+            color: #03060D;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -60px;
+            background: var(--accent);
+            color: #02070F;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            transition: top 0.2s var(--ease);
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin-inline: auto;
+            padding-inline: clamp(1rem, 3.6vw, 2.4rem);
+        }
+
+        /* GLASS UTILITY */
+        .glass {
+            background: linear-gradient(160deg, rgba(148, 163, 184, 0.07), rgba(148, 163, 184, 0.02));
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            box-shadow: var(--shadow-card), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+        }
+        .glass-strong {
+            background: linear-gradient(160deg, rgba(148, 163, 184, 0.10), rgba(148, 163, 184, 0.03));
+            border: 1px solid var(--border-glass-strong);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            box-shadow: var(--shadow-card), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+        }
+
+        /* NAV */
+        .site-nav {
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: min(calc(100% - 28px), var(--max-width));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+            background: rgba(2, 6, 23, 0.6);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            box-shadow: 0 12px 48px -24px rgba(0, 0, 0, 0.9);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .site-nav.scrolled {
+            background: rgba(2, 6, 23, 0.82);
+            box-shadow: 0 16px 56px -24px rgba(0, 0, 0, 0.95);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .brand span {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s var(--ease);
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width 0.3s var(--ease);
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent);
+            color: #03060D;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.45rem 1.1rem;
+            border-radius: var(--radius-full);
+            box-shadow: 0 8px 28px -10px var(--accent-glow);
+            transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease);
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 36px -8px var(--accent-glow);
+        }
+
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            transition: border-color 0.2s ease;
+            background: rgba(148, 163, 184, 0.05);
+        }
+        .nav-toggle:hover {
+            border-color: var(--accent);
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99;
+            background: rgba(2, 6, 23, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s var(--ease);
+        }
+        .nav-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .nav-mobile-menu {
+            position: fixed;
+            top: 80px;
+            right: 16px;
+            width: min(300px, 80%);
+            background: rgba(2, 6, 23, 0.9);
+            border: 1px solid var(--border-glass-strong);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
+            padding: 1.6rem 1.2rem;
+            transform: translateY(-12px) scale(0.96);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+            z-index: 100;
+        }
+        .nav-mobile-menu.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .nav-mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .nav-mobile-menu a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border-glass);
+            display: block;
+            transition: color 0.2s ease;
+        }
+        .nav-mobile-menu a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 740px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-toggle {
+                display: inline-flex;
+            }
+            .site-nav {
+                padding: 0.4rem 0.8rem 0.4rem 1rem;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            padding-top: calc(var(--nav-height) + 3.2rem);
+            padding-bottom: 2.8rem;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            background: var(--accent-soft);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            margin-bottom: 1rem;
+        }
+        .eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.20);
+            animation: pulse-dot 2.4s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        .hero-title {
+            font-weight: 800;
+            font-size: clamp(2.2rem, 5.2vw, 4rem);
+            line-height: 1.04;
+            letter-spacing: -0.025em;
+            margin: 0 0 0.8rem;
+            max-width: 15ch;
+        }
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--accent), #93C5FD, var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: grad-shift 7s ease-in-out infinite alternate;
+        }
+        @keyframes grad-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-sub {
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            max-width: 50ch;
+            margin: 0 0 2rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.75fr;
+            gap: 1.6rem;
+            align-items: start;
+        }
+        @media (max-width: 940px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /*  CHAMBER  */
+        .chamber {
+            padding: clamp(1.2rem, 2.8vw, 2rem);
+            border-radius: var(--radius-lg);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+        .chamber::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            z-index: -1;
+            background: linear-gradient(150deg, rgba(59, 130, 246, 0.06), transparent 50%);
+            opacity: 0.9;
+        }
+
+        .dropzone {
+            border: 1.5px dashed var(--border-glass-strong);
+            border-radius: var(--radius-md);
+            padding: clamp(1.6rem, 4.5vw, 2.8rem) 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease);
+        }
+        .dropzone:hover,
+        .dropzone:focus-visible {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.05);
+            box-shadow: 0 0 48px -16px var(--accent-glow);
+        }
+        .dropzone.is-dragover {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.08);
+            transform: scale(1.01);
+            box-shadow: 0 0 64px -20px var(--accent-glow);
+        }
+        .dropzone.is-busy {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .chamber-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.20), rgba(59, 130, 246, 0.04));
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: var(--accent-light);
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease);
+        }
+        .dropzone:hover .chamber-icon {
+            transform: scale(1.04);
+            box-shadow: 0 0 32px -10px var(--accent-glow);
+        }
+        .chamber-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .dropzone h2 {
+            font-size: 1.1rem;
+            margin: 0 0 0.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .dropzone p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        .dropzone .browse {
+            color: var(--accent-light);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+        .dropzone .browse:hover {
+            color: #fff;
+        }
+        .file-meta-hint {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+
+        #file-input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .file-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(148, 163, 184, 0.06);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.8rem;
+            margin-top: 0.8rem;
+            animation: chip-in 0.35s var(--ease-spring);
+        }
+        @keyframes chip-in {
+            from {
+                opacity: 0;
+                transform: translateY(6px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .file-chip svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-light);
+            flex-shrink: 0;
+        }
+        .file-chip .fc-name {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+        .file-chip .fc-size {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+        .file-chip button {
+            padding: 0.2rem;
+            border-radius: 4px;
+            line-height: 0;
+            color: var(--text-secondary);
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+        .file-chip button:hover {
+            color: #fff;
+            background: rgba(148, 163, 184, 0.10);
+        }
+
+        .chamber-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.84rem;
+            padding: 0.65rem 1.3rem;
+            border-radius: var(--radius-full);
+            border: 1px solid transparent;
+            transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease), opacity 0.2s ease, background 0.2s ease;
+        }
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-primary {
+            background: linear-gradient(145deg, var(--accent), var(--accent-dark));
+            color: #03060D;
+            box-shadow: 0 8px 28px -10px var(--accent-glow);
+        }
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 14px 38px -10px var(--accent-glow);
+        }
+
+        .btn-ghost {
+            background: rgba(148, 163, 184, 0.06);
+            color: var(--text-primary);
+            border-color: var(--border-glass);
+        }
+        .btn-ghost:hover:not(:disabled) {
+            background: rgba(148, 163, 184, 0.10);
+            border-color: var(--border-glass-strong);
+            transform: translateY(-1px);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+        .btn .spinner {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid rgba(3, 6, 13, 0.25);
+            border-top-color: #03060D;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* READOUT  */
+        .readout {
+            padding: 1.4rem 1.6rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 250px;
+        }
+        .readout h3 {
+            font-size: 0.95rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .readout-empty {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0.2rem 0;
+            line-height: 1.6;
+        }
+
+        .gauge {
+            display: none;
+            flex-direction: column;
+            gap: 0.9rem;
+            animation: fade-up 0.5s var(--ease-spring);
+        }
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .gauge.is-active {
+            display: flex;
+        }
+
+        .gauge-percent {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            color: var(--success);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: baseline;
+            gap: 0.2rem;
+        }
+        .gauge-percent small {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-left: 0.2rem;
+        }
+
+        .gauge-bar {
+            position: relative;
+            height: 6px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            background: rgba(148, 163, 184, 0.10);
+        }
+        .gauge-bar-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 0%;
+            border-radius: var(--radius-full);
+            background: linear-gradient(90deg, var(--accent), var(--success));
+            transition: width 1.2s var(--ease);
+        }
+
+        .gauge-rows {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 1rem;
+            padding-top: 0.2rem;
+        }
+        .gauge-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.05rem;
+        }
+        .gauge-row .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+        .gauge-row .value {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .gauge-row .value.after {
+            color: var(--success);
+        }
+
+        /*  LOG */
+        .log-panel {
+            padding: 1rem 1.1rem;
+            margin-top: 1rem;
+            border-radius: var(--radius-md);
+            background: rgba(2, 6, 23, 0.40);
+            border: 1px solid var(--border-glass);
+        }
+        .log-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .log-head h3 {
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+        }
+        .log-head .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--success);
+        }
+        .log-toggle {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+        .log-toggle:hover {
+            color: #fff;
+        }
+
+        .log-body {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            line-height: 1.8;
+            color: #A7B4C6;
+            max-height: 150px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(148, 163, 184, 0.15) transparent;
+        }
+        .log-body::-webkit-scrollbar {
+            width: 3px;
+        }
+        .log-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .log-body::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.20);
+            border-radius: 4px;
+        }
+        .log-body div {
+            padding: 0.05rem 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.03);
+        }
+        .log-body div:last-child {
+            border-bottom: none;
+        }
+        .log-body .t {
+            color: #4A5A72;
+            margin-right: 0.5rem;
+            font-weight: 400;
+        }
+        .log-body .ok {
+            color: var(--success);
+        }
+
+        /*  FEATURES */
+        .section {
+            padding: 4rem 0;
+        }
+        .section-head {
+            max-width: 44ch;
+            margin-bottom: 2.4rem;
+        }
+        .section-head .eyebrow {
+            margin-bottom: 0.6rem;
+        }
+        .section-head h2 {
+            font-weight: 800;
+            font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+            margin: 0 0 0.4rem;
+            letter-spacing: -0.02em;
+        }
+        .section-head p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 880px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 580px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            padding: 1.4rem 1.3rem;
+            border-radius: var(--radius-md);
+            background: linear-gradient(160deg, rgba(148, 163, 184, 0.06), rgba(148, 163, 184, 0.02));
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(12px) saturate(140%);
+            -webkit-backdrop-filter: blur(12px) saturate(140%);
+            transition: transform 0.3s var(--ease-spring), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-glass-strong);
+            box-shadow: 0 16px 48px -24px rgba(0, 0, 0, 0.6);
+        }
+        .feature-card .f-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-soft);
+            color: var(--accent-light);
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s var(--ease-spring), background 0.3s ease;
+        }
+        .feature-card:hover .f-icon {
+            transform: scale(1.05);
+            background: rgba(59, 130, 246, 0.16);
+        }
+        .feature-card .f-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+        .feature-card h3 {
+            font-size: 0.92rem;
+            margin: 0 0 0.25rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* STEPS */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+        }
+        @media (max-width: 880px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 520px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step {
+            padding: 1.3rem 1.2rem;
+            border-radius: var(--radius-md);
+            background: linear-gradient(160deg, rgba(148, 163, 184, 0.06), rgba(148, 163, 184, 0.02));
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(12px) saturate(140%);
+            -webkit-backdrop-filter: blur(12px) saturate(140%);
+            transition: transform 0.3s var(--ease-spring), border-color 0.3s ease;
+        }
+        .step:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-glass-strong);
+        }
+        .step .s-num {
+            font-family: var(--font-mono);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            margin-bottom: 0.4rem;
+            display: block;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+        .step h3 {
+            font-size: 0.9rem;
+            margin: 0 0 0.25rem;
+            font-weight: 700;
+        }
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2.4rem 0 2.8rem;
+            border-top: 1px solid var(--border-glass);
+            margin-top: 0.4rem;
+        }
+        .footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-brand img {
+            width: 22px;
+            height: 22px;
+            border-radius: 5px;
+        }
+        .footer-brand span {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        footer small {
+            color: var(--text-muted);
+            font-size: 0.74rem;
+        }
+        
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(24px) saturate(1.4);
+            -webkit-backdrop-filter: blur(24px) saturate(1.4);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            padding: 16px 24px;
+            z-index: 10000;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #cookie-banner.hidden {
+            transform: translateY(100%);
+        }
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .cookie-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--slate-bright);
+        }
+        .cookie-text i {
+            color: var(--blue);
+            font-size: 1.2rem;
+        }
+        .cookie-text a {
+            color: var(--blue);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(59, 130, 246, 0.2);
+            transition: border-color var(--transition);
+        }
+        .cookie-text a:hover {
+            border-bottom-color: var(--blue);
+        }
+        .cookie-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .btn-cookie {
+            padding: 8px 22px;
+            border-radius: var(--radius-sm);
+            border: none;
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .btn-cookie-accept {
+            background: var(--blue);
+            color: #fff;
+            box-shadow: 0 2px 20px rgba(59, 130, 246, 0.25);
+        }
+        .btn-cookie-accept:hover {
+            background: #5b9af8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 28px rgba(59, 130, 246, 0.35);
+        }
+        .btn-cookie-decline {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--slate);
+            border: 1px solid rgba(148, 163, 184, 0.08);
+        }
+        .btn-cookie-decline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        /* BOTTOM NAV */
+        .bottom-nav {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 90;
+            width: min(calc(100% - 32px), 580px);
+            background: rgba(2, 6, 23, 0.75);
+            border: 1px solid var(--border-glass-strong);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            box-shadow: 0 12px 48px -24px rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0.4rem 0.2rem;
+            height: var(--bottom-nav-height);
+        }
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.1rem;
+            color: var(--text-secondary);
+            font-size: 0.55rem;
+            font-weight: 500;
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--radius-sm);
+            transition: color 0.2s var(--ease), transform 0.25s var(--ease-spring);
+            min-width: 48px;
+            text-decoration: none;
+        }
+        .bottom-nav a:hover,
+        .bottom-nav a:focus-visible {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .bottom-nav a.active {
+            color: var(--accent-light);
+        }
+        .bottom-nav a svg {
+            width: 22px;
+            height: 22px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            transition: stroke 0.2s;
+        }
+        .bottom-nav a span {
+            line-height: 1;
+            font-size: 0.55rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (min-width: 741px) {
+            .bottom-nav {
+                display: none;
+            }
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        /*  TOAST  */
+        .toast-region {
+            position: fixed;
+            bottom: calc(var(--bottom-nav-height) + 28px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: min(92%, 380px);
+            pointer-events: none;
+        }
+        @media (min-width: 741px) {
+            .toast-region {
+                bottom: 20px;
+            }
+        }
+        .toast {
+            padding: 0.7rem 0.9rem;
+            border-radius: var(--radius-sm);
+            background: rgba(2, 6, 23, 0.92);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: toast-in 0.35s var(--ease-spring);
+            box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.9);
+            pointer-events: auto;
+        }
+        .toast.error {
+            border-color: rgba(248, 113, 113, 0.35);
+        }
+        .toast .t-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--success);
+            flex-shrink: 0;
+        }
+        .toast.error .t-dot {
+            background: #F87171;
+        }
+        @keyframes toast-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 740px) {
+            .container {
+                padding-inline: 1rem;
+            }
+            .readout {
+                min-height: 180px;
+                padding: 1.2rem 1.2rem;
+            }
+            .gauge-rows {
+                gap: 0.4rem;
+            }
+        }
+        @media (max-width: 460px) {
+            .chamber-actions .btn {
+                flex: 1;
+                min-width: 110px;
+                font-size: 0.76rem;
+                padding: 0.55rem 0.9rem;
+            }
+            .feature-card {
+                padding: 1rem 0.9rem;
+            }
+            .step {
+                padding: 1rem 0.9rem;
+            }
+            .hero-title {
+                font-size: clamp(1.8rem, 8vw, 2.4rem);
+            }
+            .dropzone h2 {
+                font-size: 1rem;
+            }
+            .dropzone p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gauge-bar-fill {
+                transition: none !important;
+            }
+            .dropzone {
+                transition: none !important;
+            }
+            .feature-card,
+            .step {
+                transition: none !important;
+            }
+            .feature-card:hover,
+            .step:hover {
+                transform: none !important;
+            }
+            .btn {
+                transition: none !important;
+            }
+            .btn:hover:not(:disabled) {
+                transform: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="nav" role="banner">
-  <div class="wrap navin">
-    <a class="brand" href="#top" aria-label="RaiaMinify home">
-      <img src="https://i.postimg.cc/GmWt2wch/H-blue.webp" alt="RaiaMinify logo">
-      <div><strong>RaiaMinify</strong><span>Premium code minifier</span></div>
-    </a>
-    <a class="btn secondary" href="#main">Start Minifying</a>
-  </div>
-</header>
-<main id="main" class="wrap content">
-  <section class="hero grid" id="top">
-    <div class="panel hero-copy">
-      <span class="eyebrow">Fast • Clean • Browser-based</span>
-      <h1>Minify large code files without breaking the logic.</h1>
-      <p>RaiaMinify removes safe whitespace, redundant blank lines, trailing spaces, and optional comments while keeping syntax valid. Compare file size, line count, and download the optimized result instantly.</p>
-      <div class="stats" aria-label="Highlights">
-        <div class="stat"><b>200 KB+</b><span>Designed for large files</span></div>
-        <div class="stat"><b>3,000+ lines</b><span>Responsive processing</span></div>
-        <div class="stat"><b>ES6+</b><span>Lightweight architecture</span></div>
-      </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- NAV -->
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="RaiaMinify home">
+            <img src="https://i.postimg.cc/GmWt2wch/H-blue.webp" alt="" width="28" height="28" aria-hidden="true" />
+            <span>RaiaMinify</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#chamber-section">Minify</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+        </ul>
+        <a class="nav-cta" href="#chamber-section">Start minifying</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+    </nav>
+
+    <!-- Mobile overlay & menu -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="nav-mobile-menu" id="navMobileMenu" role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="#chamber-section" class="mobile-link">Minify</a></li>
+            <li><a href="#features" class="mobile-link">Features</a></li>
+            <li><a href="#how" class="mobile-link">How it works</a></li>
+            <li><a href="#chamber-section" class="mobile-link nav-cta" style="display:inline-flex;background:var(--accent);color:#03060D;padding:0.45rem 1.1rem;border-radius:var(--radius-full);">Start minifying</a></li>
+        </ul>
     </div>
-    <div class="panel drop">
-      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload code file by drag and drop or file picker">
-        <div>
-          <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="RaiaMinify alternate logo" width="72" height="72" style="margin:0 auto 10px;border-radius:18px;box-shadow:0 12px 26px rgba(59,130,246,.18)">
-          <h2>Drop your code file here</h2>
-          <p>Or choose a file manually. Large files stay responsive during processing.</p>
-          <div class="actions">
-            <button class="btn primary" id="pickBtn" type="button">Choose File</button>
-            <button class="btn secondary" id="minifyBtn" type="button" disabled>Minify File</button>
-          </div>
-          <input class="file" id="fileInput" type="file" accept=".js,.ts,.jsx,.tsx,.css,.html,.htm,.json,.xml,.svg,.md,.txt,.c,.cpp,.h,.hpp,.java,.py,.php,.rb,.go,.rs,.lua,.sh,.sql,.yml,.yaml,.ini,.toml,.mjs,.cjs,.scss,.less,.sass,.vue,.svelte,.astro,.json5,.map" aria-label="Select code file">
+
+    <!-- MAIN -->
+<main id="main">
+    <div id="top"></div>
+
+    <header class="hero">
+        <div class="container hero-grid" id="chamber-section">
+
+            <div>
+                <span class="eyebrow">
+                    <span class="dot" aria-hidden="true"></span>100% In-Browser Processing
+                </span>
+                <h1 class="hero-title">
+                    Make your code smaller, <span class="accent">without breaking a thing.</span>
+                </h1>
+                <p class="hero-sub">
+                    Drop your file here to instantly strip away spaces, extra lines, and comments. Simple, fast, and completely private your files never leave your device.
+                </p>
+
+                <section class="chamber glass" aria-labelledby="dropzone-title">
+                    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-describedby="dropzone-hint" aria-label="Upload file to compress">
+                        <div class="chamber-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
+                            </svg>
+                        </div>
+                        <h2 id="dropzone-title">Drag &amp; drop your file here</h2>
+                        <p>or <span class="browse">choose from your computer</span></p>
+                        <p class="file-meta-hint" id="dropzone-hint">Supports .js · .css · .html · .json</p>
+                        <input type="file" id="file-input" aria-label="Choose a file to minify" />
+                    </div>
+
+                    <div id="file-chip-region"></div>
+
+                    <div class="chamber-actions">
+                        <button type="button" class="btn btn-primary" id="minify-btn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/>
+                            </svg>
+                            <span id="minify-btn-label">Compress File</span>
+                        </button>
+                        <button type="button" class="btn btn-ghost" id="download-btn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
+                            </svg>
+                            Download Result
+                        </button>
+                    </div>
+
+                    <div class="log-panel">
+                        <div class="log-head">
+                            <h3><span class="dot" aria-hidden="true"></span>Status Log</h3>
+                            <button type="button" class="log-toggle" id="log-clear">Clear Log</button>
+                        </div>
+                        <div class="log-body" id="log-body" role="log" aria-live="polite" aria-relevant="additions">
+                            <div><span class="t">00:00:00</span>Ready. Waiting for a file…</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="readout glass-strong" aria-labelledby="readout-title">
+                <h3 id="readout-title">Optimization Stats</h3>
+                
+                <div class="readout-empty" id="readout-empty">
+                    Your savings, line counts, and new file size will show up here after compression.
+                </div>
+
+                <div class="gauge" id="gauge">
+                    <div class="gauge-percent">
+                        <span id="gauge-percent-value">0%</span>
+                        <small>size reduction</small>
+                    </div>
+                    <div class="gauge-bar">
+                        <div class="gauge-bar-fill" id="gauge-bar-fill"></div>
+                    </div>
+                    <div class="gauge-rows">
+                        <div class="gauge-row">
+                            <span class="label">Original Size</span>
+                            <span class="value" id="stat-size-before">—</span>
+                        </div>
+                        <div class="gauge-row">
+                            <span class="label">New Size</span>
+                            <span class="value after" id="stat-size-after">—</span>
+                        </div>
+                        <div class="gauge-row">
+                            <span class="label">Original Lines</span>
+                            <span class="value" id="stat-lines-before">—</span>
+                        </div>
+                        <div class="gauge-row">
+                            <span class="label">New Lines</span>
+                            <span class="value after" id="stat-lines-after">—</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="workspace panel" aria-label="Minify workspace">
-    <div class="toolbar">
-      <div class="meta">
-        <span class="badge" id="fileName">No file loaded</span>
-        <span class="badge" id="sizeBefore">Size before: —</span>
-        <span class="badge" id="sizeAfter">Size after: —</span>
-        <span class="badge" id="reduction">Reduction: —</span>
-      </div>
-      <div class="meta">
-        <span class="badge" id="linesBefore">Lines before: —</span>
-        <span class="badge" id="linesAfter">Lines after: —</span>
-      </div>
-    </div>
-    <div class="editor">
-      <div class="box"><h3>Original code</h3><textarea id="inputCode" class="code" spellcheck="false" aria-label="Original code input" placeholder="Your file content appears here or paste code manually."></textarea></div>
-      <div class="box"><h3>Minified code</h3><textarea id="outputCode" class="code" spellcheck="false" readonly aria-label="Minified code output" placeholder="Minified result will appear here."></textarea></div>
-    </div>
-    <div class="toolbar" style="padding-top:0">
-      <div class="meta"><span class="badge" id="status">Ready</span></div>
-      <div class="actions" style="justify-content:flex-end;margin:0">
-        <button class="btn secondary" id="copyBtn" type="button" disabled>Copy Result</button>
-        <button class="btn primary" id="downloadBtn" type="button" disabled>Download Minified File</button>
-      </div>
-    </div>
-    <div class="toolbar" style="padding-top:0">
-      <div style="width:100%">
-        <h3 style="margin:0 0 10px;font-size:1rem">Process log</h3>
-        <textarea id="logBox" class="code log" readonly aria-label="Process log">Load a file to begin.</textarea>
-      </div>
-    </div>
-  </section>
+    </header>
+
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Why Use RaiaMinify</span>
+                <h2>Smaller files mean faster loading websites.</h2>
+                <p>Clean up unnecessary bloat while keeping your code completely safe.</p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
+                    </div>
+                    <h3>Removes Extra Spaces</h3>
+                    <p>Strips out unnecessary gaps, tabs, and spaces without breaking your layout or code structure.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg>
+                    </div>
+                    <h3>Cleans Blank Lines</h3>
+                    <p>Collapses empty lines down to compact your file size as much as possible.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3>Smart Comment Removal</h3>
+                    <p>Safely deletes developer notes while protecting critical text, links, and code strings.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9v10.2L12 22l-9-4.9V6.9z"/></svg>
+                    </div>
+                    <h3>Language-Aware</h3>
+                    <p>Uses tailor-made rules for JavaScript, CSS, HTML, and JSON so your code always works.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+                    </div>
+                    <h3>100% Private</h3>
+                    <p>Everything is calculated right inside your web browser. Your code is never sent to any server.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="f-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg>
+                    </div>
+                    <h3>Fast &amp; Efficient</h3>
+                    <p>Optimized to handle large files and thousands of lines of code seamlessly without crashing.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="how">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How It Works</span>
+                <h2>Four simple steps. Zero setup.</h2>
+                <p>Just select your file and let the app handle the rest.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <span class="s-num">01</span>
+                    <h3>Select your file</h3>
+                    <p>Drag your file into the box or select it from your device.</p>
+                </div>
+                <div class="step">
+                    <span class="s-num">02</span>
+                    <h3>Auto-Detect</h3>
+                    <p>The app automatically recognizes whether it's JS, CSS, HTML, or JSON.</p>
+                </div>
+                <div class="step">
+                    <span class="s-num">03</span>
+                    <h3>Instant Processing</h3>
+                    <p>Redundant spaces and comments are removed right in your browser.</p>
+                </div>
+                <div class="step">
+                    <span class="s-num">04</span>
+                    <h3>Download</h3>
+                    <p>Save your lightweight, optimized file ready for immediate use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-<footer class="footer wrap">RaiaMinify is built for modern browsers with an emphasis on speed, accessibility, and stable large-file handling.</footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script>
-(()=>{const $=s=>document.querySelector(s),dropzone=$('#dropzone'),fileInput=$('#fileInput'),pickBtn=$('#pickBtn'),minifyBtn=$('#minifyBtn'),copyBtn=$('#copyBtn'),downloadBtn=$('#downloadBtn'),inputCode=$('#inputCode'),outputCode=$('#outputCode'),logBox=$('#logBox'),toast=$('#toast'),status=$('#status'),els={fileName:$('#fileName'),sizeBefore:$('#sizeBefore'),sizeAfter:$('#sizeAfter'),reduction:$('#reduction'),linesBefore:$('#linesBefore'),linesAfter:$('#linesAfter')};let currentFile=null,originalText='';const fmt=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB';const lines=s=>s?s.split(/
-|
-|
-/).length:0;const setLog=t=>{logBox.value=t;logBox.scrollTop=logBox.scrollHeight};const show=t=>{toast.textContent=t;toast.classList.add('show');clearTimeout(show._t);show._t=setTimeout(()=>toast.classList.remove('show'),2200)};const setStatus=t=>{status.textContent=t};const updateStats=(before,after)=>{const b=before.length,a=after.length;els.sizeBefore.textContent='Size before: '+fmt(b);els.sizeAfter.textContent='Size after: '+fmt(a);els.reduction.textContent='Reduction: '+(b?((1-a/b)*100).toFixed(2):'0.00')+'%';els.linesBefore.textContent='Lines before: '+lines(before);els.linesAfter.textContent='Lines after: '+lines(after)};const safeMinify=(code,name='file')=>{let out=code.replace(/
-?/g,'
-').replace(/\t/g,' ').replace(/[ \f\u000B]+$/gm,'');const ext=(name.split('.').pop()||'').toLowerCase();const isHtml=/^(html?|xml|svg|vue|svelte|astro)$/i.test(ext),isCss=/^(css|scss|sass|less)$/i.test(ext),isJs=/^(m?js|cjs|jsx|tsx|ts|json5|json|py|php|rb|go|rs|lua|sh|java|c|cpp|h|hpp|ini|toml|yml|yaml|sql)$/i.test(ext);if(isHtml){out=out.replace(/<!--[\\s\\S]*?-->/g,'');out=out.replace(/>\\s+</g,'><').replace(/\
-{3,}/g,'\
-\
-')}else if(isCss){out=out.replace(/\\/\\*[\\s\\S]*?\\*\\//g,'').replace(/\\s*([:;{},])\\s*/g,'$1').replace(/;}/g,'}').replace(/\
-{2,}/g,'\
-')}else if(isJs){out=out.replace(/\\/\\*[\\s\\S]*?\\*\\//g,'');out=out.replace(/(^|[^:\\\\\\\\])\\/\\/.*$/gm,'$1');out=out.replace(/[\\t ]{2,}/g,' ');out=out.replace(/\
-{3,}/g,'\
-\
-')}else{out=out.replace(/\
-{3,}/g,'\
-\
-')}out=out.replace(/[ \\t]+\
-/g,'\
-').replace(/^\\s+$/gm,'').trimEnd();return out};const loadFile=file=>{if(!file)return;currentFile=file;els.fileName.textContent=file.name;setStatus('Reading file');setLog(`Selected: ${file.name}\
-Size: ${fmt(file.size)}\
-Type: ${file.type||'unknown'}\
-Reading content...`);const r=new FileReader();r.onload=e=>{originalText=String(e.target.result||'');inputCode.value=originalText;outputCode.value='';updateStats(originalText,'');minifyBtn.disabled=!originalText;copyBtn.disabled=true;downloadBtn.disabled=true;setStatus('Ready to minify');setLog(`Loaded successfully.\
-Characters: ${originalText.length.toLocaleString()}\
-Lines: ${lines(originalText).toLocaleString()}\
-Press Minify File to process.`);show('File loaded')};r.onerror=()=>{setStatus('Read error');setLog('Failed to read the file.');show('Unable to read file')};r.readAsText(file)};const process=()=>{const source=inputCode.value||originalText;if(!source){show('No code to minify');return}setStatus('Minifying');const started=performance.now();const result=safeMinify(source,currentFile?.name||'file.txt');outputCode.value=result;updateStats(source,result);copyBtn.disabled=!result;downloadBtn.disabled=!result;setStatus('Done');setLog(`Minify complete.\
-Input lines: ${lines(source).toLocaleString()}\
-Output lines: ${lines(result).toLocaleString()}\
-Input size: ${fmt(source.length)}\
-Output size: ${fmt(result.length)}\
-Time: ${(performance.now()-started).toFixed(1)} ms`);show('Minify complete')};pickBtn.onclick=()=>fileInput.click();minifyBtn.onclick=process;copyBtn.onclick=async()=>{if(!outputCode.value)return;await navigator.clipboard.writeText(outputCode.value);show('Copied to clipboard')};downloadBtn.onclick=()=>{if(!outputCode.value)return;const blob=new Blob([outputCode.value],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=(currentFile?.name||'raiaminify')+'.min.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);show('Download started')};fileInput.addEventListener('change',e=>loadFile(e.target.files[0]));dropzone.addEventListener('dragover',e=>{e.preventDefault();dropzone.classList.add('drag')});dropzone.addEventListener('dragleave',()=>dropzone.classList.remove('drag'));dropzone.addEventListener('drop',e=>{e.preventDefault();dropzone.classList.remove('drag');const f=e.dataTransfer.files&&e.dataTransfer.files[0];loadFile(f)});dropzone.addEventListener('click',e=>{if(e.target!==pickBtn&&e.target!==minifyBtn)fileInput.click()});dropzone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click()}});inputCode.addEventListener('input',()=>{minifyBtn.disabled=!inputCode.value;setStatus('Editing');if(inputCode.value)updateStats(inputCode.value,outputCode.value)});setLog('Ready. Upload a large code file or paste code manually.\
-Supported actions: drag & drop, file picker, minify, copy, download.');})();
-</script>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="RaiaMinify Logo" loading="lazy" decoding="async" width="22" height="22" />
+                <span>RaiaMinify</span>
+            </div>
+            <div class="footer-links" style="display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;">
+                <small style="color:var(--text-secondary);">Lighter Code, Faster Web</small>
+                <a href="https://raia-footer.netlify.app/#privacy" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);font-size:0.74rem;">Privacy Policy</a>
+                <a href="https://raia-footer.netlify.app/#terms" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);font-size:0.74rem;">Terms of Service</a>
+            </div>
+            <small style="color:var(--text-muted);">&copy; 2026 Haiere</small>
+        </div>
+    </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Quick navigation">
+    <a href="#top" aria-label="Home">
+        <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>Home</span>
+    </a>
+    <a href="#chamber-section" aria-label="Minify" class="active">
+        <svg viewBox="0 0 24 24"><path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/></svg>
+        <span>Compress</span>
+    </a>
+    <a href="#features" aria-label="Features">
+        <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
+        <span>Features</span>
+    </a>
+    <a href="#how" aria-label="How it works">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <span>How it Works</span>
+    </a>
+</nav>
+
+<div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <i class="fas fa-cookie-bite" aria-hidden="true"></i>
+            <span>We use cookies to ensure you get the best experience on our website. Read our <a href="https://haiere.github.io/raia-footer/#cookie" rel="noopener noreferrer">Cookie Policy</a>.</span>
+        </div>
+        <div class="cookie-actions">
+            <button type="button" class="btn-cookie btn-cookie-decline" onclick="declineCookies()">Decline</button>
+            <button type="button" class="btn-cookie btn-cookie-accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Toast -->
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+
+    <!-- SCRIPT-->
+    <script>
+        (function() {
+            'use strict';
+
+            /* ---------- helpers ---------- */
+            function fmtBytes(bytes) {
+                if (bytes === 0) return '0 B';
+                const u = ['B', 'KB', 'MB', 'GB'];
+                const i = Math.min(u.length - 1, Math.floor(Math.log(bytes) / Math.log(1024)));
+                const v = bytes / Math.pow(1024, i);
+                return (i === 0 ? v : v.toFixed(2)) + ' ' + u[i];
+            }
+
+            function countLines(s) { return s.length === 0 ? 0 : s.split('\n').length; }
+
+            function extOf(name) { const m = /\.([a-z0-9]+)$/i.exec(name || ''); return m ? m[1].toLowerCase() : ''; }
+
+            function esc(s) { return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;',
+                    "'": '&#39;' } [c])); }
+
+            function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+
+            function ts() { const d = new Date(); return pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ':' + pad2(d
+                    .getSeconds()); }
+
+            /* ---------- minify: JS ---------- */
+            const JS_PRE_KW = new Set(['return', 'typeof', 'instanceof', 'in', 'of', 'new', 'delete', 'void', 'throw',
+                'case', 'do', 'else', 'yield', 'await', 'extends', 'default'
+            ]);
+            const JS_PRE_PUNCT = new Set(['(', ',', '=', '[', '!', '&', '|', '?', ':', ';', '{', '}', '+', '-', '*', '%',
+                '<', '>', '~', '^', '\n', 'START'
+            ]);
+
+            function minifyJS(src) {
+                let i = 0,
+                    n = src.length,
+                    out = [],
+                    last = 'START';
+
+                function isIdStart(c) { return /[A-Za-z_$]/.test(c); }
+
+                function isIdPart(c) { return /[A-Za-z0-9_$]/.test(c); }
+
+                while (i < n) {
+                    const c = src[i];
+                    if (c === '/' && src[i + 1] === '/') { while (i < n && src[i] !== '\n') i++; continue; }
+                    if (c === '/' && src[i + 1] === '*') { i += 2; while (i < n && !(src[i] === '*' && src[i + 1] === '/'))
+                            i++;
+                        i += 2; continue; }
+                    if (c === '"' || c === "'") {
+                        const q = c;
+                        out.push(q);
+                        i++;
+                        while (i < n && src[i] !== q) { if (src[i] === '\\') { out.push(src[i]);
+                                i++; if (i < n) { out.push(src[i]);
+                                    i++; } continue; } if (src[i] === '\n') break;
+                            out.push(src[i]);
+                            i++; }
+                        if (i < n && src[i] === q) { out.push(src[i]);
+                            i++; }
+                        last = ')';
+                        continue;
+                    }
+                    if (c === '`') {
+                        out.push(c);
+                        i++;
+                        while (i < n) {
+                            if (src[i] === '\\') { out.push(src[i]);
+                                i++; if (i < n) { out.push(src[i]);
+                                    i++; } continue; }
+                            if (src[i] === '`') { out.push(src[i]);
+                                i++; break; }
+                            if (src[i] === '$' && src[i + 1] === '{') {
+                                out.push('${');
+                                i += 2;
+                                let d = 1;
+                                while (i < n && d > 0) {
+                                    if (src[i] === '{') d++;
+                                    else if (src[i] === '}') d--;
+                                    if (d === 0) { out.push('}');
+                                        i++; break; }
+                                    out.push(src[i]);
+                                    i++;
+                                }
+                                continue;
+                            }
+                            out.push(src[i]);
+                            i++;
+                        }
+                        last = ')';
+                        continue;
+                    }
+                    if (c === '/' && (JS_PRE_PUNCT.has(last) || JS_PRE_KW.has(last))) {
+                        let j = i + 1,
+                            inClass = false,
+                            safe = true;
+                        while (j < n) {
+                            const ch = src[j];
+                            if (ch === '\\') { j += 2; continue; }
+                            if (ch === '\n') { safe = false; break; }
+                            if (ch === '[') inClass = true;
+                            else if (ch === ']') inClass = false;
+                            else if (ch === '/' && !inClass) break;
+                            j++;
+                        }
+                        if (safe && j < n && src[j] === '/') {
+                            out.push(src.slice(i, j + 1));
+                            i = j + 1;
+                            while (i < n && /[a-z]/i.test(src[i])) { out.push(src[i]);
+                                i++; }
+                            last = ')';
+                            continue;
+                        }
+                    }
+                    if (isIdStart(c) || /[0-9]/.test(c)) {
+                        let j = i;
+                        while (j < n && isIdPart(src[j])) j++;
+                        const w = src.slice(i, j);
+                        out.push(w);
+                        i = j;
+                        last = JS_PRE_KW.has(w) ? w : ')';
+                        continue;
+                    }
+                    if (c === ' ' || c === '\t') {
+                        let j = i;
+                        while (j < n && (src[j] === ' ' || src[j] === '\t')) j++;
+                        const prev = out.length ? out[out.length - 1] : '\n';
+                        if (prev[prev.length - 1] !== '\n' && prev[prev.length - 1] !== undefined) out.push(' ');
+                        i = j;
+                        continue;
+                    }
+                    if (c === '\n' || c === '\r') {
+                        let j = i;
+                        while (j < n && (src[j] === '\n' || src[j] === '\r' || src[j] === ' ' || src[j] === '\t')) j++;
+                        while (out.length && /[ \t]$/.test(out[out.length - 1])) out.pop();
+                        if (out.length && out[out.length - 1] !== '\n') out.push('\n');
+                        i = j;
+                        continue;
+                    }
+                    out.push(c);
+                    last = c;
+                    i++;
+                }
+                let r = out.join('');
+                r = r.replace(/^\n+/, '').replace(/\n+$/, '\n');
+                return r;
+            }
+
+            /* ---------- minify: CSS ---------- */
+            function minifyCSS(src) {
+                let i = 0,
+                    n = src.length,
+                    out = [];
+                while (i < n) {
+                    const c = src[i];
+                    if (c === '/' && src[i + 1] === '*') { i += 2; while (i < n && !(src[i] === '*' && src[i + 1] === '/'))
+                            i++;
+                        i += 2; continue; }
+                    if (c === '"' || c === "'") {
+                        const q = c;
+                        out.push(q);
+                        i++;
+                        while (i < n && src[i] !== q) { if (src[i] === '\\') { out.push(src[i]);
+                                i++; if (i < n) { out.push(src[i]);
+                                    i++; } continue; }
+                            out.push(src[i]);
+                            i++; }
+                        if (i < n) { out.push(src[i]);
+                            i++; }
+                        continue;
+                    }
+                    if (/\s/.test(c)) {
+                        let j = i;
+                        while (j < n && /\s/.test(src[j])) j++;
+                        const prev = out.length ? out[out.length - 1] : '\n';
+                        const pch = prev[prev.length - 1];
+                        const next = src[j];
+                        if (pch !== '{' && pch !== '}' && pch !== ';' && pch !== ':' && pch !== ',' && pch !== undefined &&
+                            next !== '{' && next !== '}' && next !== ';' && next !== ',' && next !== undefined) out.push(
+                            ' ');
+                        i = j;
+                        continue;
+                    }
+                    out.push(c);
+                    i++;
+                }
+                let r = out.join('');
+                r = r.replace(/;+}/g, '}').replace(/^\s+|\s+$/g, '');
+                return r;
+            }
+
+            /* ---------- minify: HTML ---------- */
+            function minifyHTML(src) {
+                const vaults = [];
+
+                function vault(s) { const t = '\u0000VAULT' + vaults.length + '\u0000';
+                    vaults.push(s); return t; }
+
+                let work = src.replace(/<(pre|textarea)([^>]*)>([\s\S]*?)<\/\1>/gi, (m, tag, attrs, inner) => {
+                    return '<' + tag + attrs + '>' + vault(inner) + '</' + tag + '>';
+                });
+
+                work = work.replace(/(<style\b[^>]*>)([\s\S]*?)(<\/style>)/gi, (m, open, css, close) => {
+                    let min = css;
+                    try { min = minifyCSS(css); } catch (_) { min = css.trim(); }
+                    return open + vault(min) + close;
+                });
+
+                work = work.replace(/(<script\b([^>]*)>)([\s\S]*?)(<\/script>)/gi, (m, open, attrs, js, close) => {
+                    if (/\bsrc\s*=/i.test(attrs)) return open + close;
+                    if (/type\s*=\s*["'](?!(?:text\/javascript|application\/javascript|module)["'])[^"']*["']/i.test(
+                        attrs)) return m;
+                    let min = js;
+                    try { min = minifyJS(js); } catch (_) { min = js.trim(); }
+                    return open + vault(min) + close;
+                });
+
+                work = work.replace(/<!--(?!\[if[\s\S]*?\])[\s\S]*?-->/g, (m) => m.startsWith('<!--[if') ? m : '');
+
+                work = work.split('\n').map(l => l.replace(/[ \t]+$/, '')).join('\n');
+                work = work.replace(/[ \t]{2,}/g, ' ');
+                work = work.replace(/\n{2,}/g, '\n');
+                work = work.replace(/>\s*\n\s*</g, '>\n<');
+                work = work.replace(/^\s+|\s+$/g, '');
+
+                work = work.replace(/\u0000VAULT(\d+)\u0000/g, (m, idx) => vaults[Number(idx)]);
+                return work;
+            }
+
+            /* ---------- minify: JSON ---------- */
+            function minifyJSON(src) { return JSON.stringify(JSON.parse(src)); }
+
+            /* ---------- minify: generic ---------- */
+            function minifyGeneric(src) {
+                let r = src.split('\n').map(l => l.replace(/[ \t]+$/, '')).join('\n');
+                r = r.replace(/\n{3,}/g, '\n\n');
+                r = r.replace(/^\n+/, '').replace(/\s+$/, '\n');
+                return r;
+            }
+
+            const JS_EXT = new Set(['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx']);
+            const CSS_EXT = new Set(['css']);
+            const HTML_EXT = new Set(['html', 'htm']);
+            const JSON_EXT = new Set(['json']);
+
+            function pickMinifier(name) {
+                const e = extOf(name);
+                if (JS_EXT.has(e)) return { fn: minifyJS, label: 'JavaScript' };
+                if (CSS_EXT.has(e)) return { fn: minifyCSS, label: 'CSS' };
+                if (HTML_EXT.has(e)) return { fn: minifyHTML, label: 'HTML' };
+                if (JSON_EXT.has(e)) return { fn: (s) => { try { return minifyJSON(s); } catch (_) { return minifyGeneric(
+                            s); } }, label: 'JSON' };
+                return { fn: minifyGeneric, label: 'generic' };
+            }
+
+            /* ---------- UI ---------- */
+            const DZ = document.getElementById('dropzone');
+            const FI = document.getElementById('file-input');
+            const FCR = document.getElementById('file-chip-region');
+            const MB = document.getElementById('minify-btn');
+            const MBL = document.getElementById('minify-btn-label');
+            const DB = document.getElementById('download-btn');
+            const LB = document.getElementById('log-body');
+            const LC = document.getElementById('log-clear');
+            const TR = document.getElementById('toast-region');
+
+            const RE = document.getElementById('readout-empty');
+            const G = document.getElementById('gauge');
+            const GPV = document.getElementById('gauge-percent-value');
+            const GBF = document.getElementById('gauge-bar-fill');
+            const SSB = document.getElementById('stat-size-before');
+            const SSA = document.getElementById('stat-size-after');
+            const SLB = document.getElementById('stat-lines-before');
+            const SLA = document.getElementById('stat-lines-after');
+
+            const SN = document.getElementById('siteNav');
+
+            let currentFile = null,
+                currentText = null,
+                resultText = null,
+                resultFilename = null;
+
+            /* nav scroll */
+            window.addEventListener('scroll', () => {
+                SN.classList.toggle('scrolled', window.scrollY > 20);
+            }, { passive: true });
+
+            /* log */
+            function log(msg, ok) {
+                const row = document.createElement('div');
+                if (ok) row.classList.add('ok');
+                row.innerHTML = '<span class="t">' + ts() + '</span>' + esc(msg);
+                LB.appendChild(row);
+                LB.scrollTop = LB.scrollHeight;
+            }
+
+            /* toast */
+            function toast(msg, err) {
+                const el = document.createElement('div');
+                el.className = 'toast' + (err ? ' error' : '');
+                el.setAttribute('role', 'status');
+                el.innerHTML = '<span class="t-dot" aria-hidden="true"></span><span></span>';
+                el.querySelector('span:last-child').textContent = msg;
+                TR.appendChild(el);
+                setTimeout(() => { el.style.opacity = '0';
+                    el.style.transition = 'opacity 0.3s ease'; }, 3200);
+                setTimeout(() => { el.remove(); }, 3600);
+            }
+
+            LC.addEventListener('click', () => { LB.innerHTML = '';
+                log('Log cleared.'); });
+
+            /* file chip */
+            function renderChip() {
+                if (!currentFile) { FCR.innerHTML = ''; return; }
+                FCR.innerHTML =
+                    '<div class="file-chip">' +
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>' +
+                    '<span class="fc-name">' + esc(currentFile.name) + '</span>' +
+                    '<span class="fc-size">' + fmtBytes(currentFile.size) + '</span>' +
+                    '<button type="button" id="fc-remove" aria-label="Remove selected file">' +
+                    '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>' +
+                    '</button>' +
+                    '</div>';
+                document.getElementById('fc-remove').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    resetAll();
+                });
+            }
+
+            function resetAll() {
+                currentFile = null;
+                currentText = null;
+                resultText = null;
+                resultFilename = null;
+                FI.value = '';
+                MB.disabled = true;
+                DB.disabled = true;
+                renderChip();
+                RE.style.display = 'flex';
+                G.classList.remove('is-active');
+                GBF.style.width = '0%';
+            }
+
+            /* file handler */
+            async function handleFile(file) {
+                if (!file) return;
+                currentFile = file;
+                resultText = null;
+                resultFilename = null;
+                DB.disabled = true;
+                renderChip();
+                RE.style.display = 'flex';
+                G.classList.remove('is-active');
+                GBF.style.width = '0%';
+                log('Loaded "' + file.name + '" — ' + fmtBytes(file.size) + '.');
+                try {
+                    currentText = await file.text();
+                    MB.disabled = false;
+                    log(countLines(currentText).toLocaleString() + ' lines detected.');
+                } catch (err) {
+                    log('Could not read file: ' + err.message);
+                    toast('Could not read that file.', true);
+                    MB.disabled = true;
+                }
+            }
+
+            /* dropzone events */
+            DZ.addEventListener('click', () => FI.click());
+            DZ.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
+                    FI.click(); } });
+            FI.addEventListener('change', (e) => { if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]); });
+
+            ['dragenter', 'dragover'].forEach(ev => {
+                DZ.addEventListener(ev, (e) => { e.preventDefault();
+                    e.stopPropagation();
+                    DZ.classList.add('is-dragover'); });
+            });
+            ['dragleave', 'drop'].forEach(ev => {
+                DZ.addEventListener(ev, (e) => { e.preventDefault();
+                    e.stopPropagation();
+                    DZ.classList.remove('is-dragover'); });
+            });
+            DZ.addEventListener('drop', (e) => {
+                const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+                if (f) handleFile(f);
+            });
+
+            /* minify */
+            MB.addEventListener('click', () => {
+                if (!currentFile || currentText === null) return;
+                MB.disabled = true;
+                DZ.classList.add('is-busy');
+                MBL.textContent = 'Minifying…';
+                const sp = document.createElement('span');
+                sp.className = 'spinner';
+                MB.insertBefore(sp, MB.firstChild);
+
+                const { fn, label } = pickMinifier(currentFile.name);
+                log('Detected "' + (extOf(currentFile.name) || 'unknown') + '" — using ' + label + ' rules.');
+
+                setTimeout(() => {
+                    const t0 = performance.now();
+                    try {
+                        const before = currentText;
+                        const after = fn(before);
+                        const t1 = performance.now();
+
+                        const bSize = new Blob([before]).size;
+                        const aSize = new Blob([after]).size;
+                        const bLines = countLines(before);
+                        const aLines = countLines(after);
+                        const red = bSize > 0 ? Math.max(0, ((bSize - aSize) / bSize) * 100) : 0;
+
+                        resultText = after;
+                        const ext = extOf(currentFile.name);
+                        const base = currentFile.name.replace(/\.[a-z0-9]+$/i, '');
+                        resultFilename = base + '.min' + (ext ? '.' + ext : '');
+
+                        RE.style.display = 'none';
+                        G.classList.add('is-active');
+                        GPV.textContent = red.toFixed(1) + '%';
+                        requestAnimationFrame(() => { GBF.style.width = Math.min(100, red) + '%'; });
+                        SSB.textContent = fmtBytes(bSize);
+                        SSA.textContent = fmtBytes(aSize);
+                        SLB.textContent = bLines.toLocaleString();
+                        SLA.textContent = aLines.toLocaleString();
+
+                        log('Minified in ' + (t1 - t0).toFixed(0) + ' ms.', true);
+                        log('Size: ' + fmtBytes(bSize) + ' → ' + fmtBytes(aSize) + ' (' + red.toFixed(1) +
+                            '% smaller).', true);
+                        log('Lines: ' + bLines.toLocaleString() + ' → ' + aLines.toLocaleString() + '.', true);
+
+                        DB.disabled = false;
+                        toast('Minified — ' + red.toFixed(1) + '% smaller.');
+                    } catch (err) {
+                        log('Minify failed: ' + err.message);
+                        toast('Something went wrong while minifying that file.', true);
+                    } finally {
+                        const sp2 = MB.querySelector('.spinner');
+                        if (sp2) sp2.remove();
+                        MBL.textContent = 'Minify file';
+                        MB.disabled = false;
+                        DZ.classList.remove('is-busy');
+                    }
+                }, 30);
+            });
+
+            /* download */
+            DB.addEventListener('click', () => {
+                if (resultText === null) return;
+                const blob = new Blob([resultText], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = resultFilename || 'minified.txt';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+                log('Downloaded "' + (resultFilename || 'minified.txt') + '".', true);
+            });
+
+            /* ---------- Mobile nav toggle ---------- */
+            const navToggle = document.getElementById('navToggle');
+            const navOverlay = document.getElementById('navOverlay');
+            const navMobileMenu = document.getElementById('navMobileMenu');
+
+            function toggleNav(open) {
+                const isOpen = open !== undefined ? open : navMobileMenu.classList.contains('open');
+                if (isOpen) {
+                    navMobileMenu.classList.remove('open');
+                    navOverlay.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    navMobileMenu.classList.add('open');
+                    navOverlay.classList.add('open');
+                    navToggle.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            navToggle.addEventListener('click', () => toggleNav());
+            navOverlay.addEventListener('click', () => toggleNav(true));
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => toggleNav(true));
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navMobileMenu.classList.contains('open')) toggleNav(true);
+            });
+
+        })();
+    </script>
 </body>
 </html>
