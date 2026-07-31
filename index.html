@@ -3,50 +3,61 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>RaiaMinify — Shrink Code, Keep Logic</title>
-    <meta name="description" content="Browser-based code minifier. Drop a JS, CSS, HTML, or JSON file — get a smaller file that behaves exactly the same. Nothing leaves your device." />
-    <meta name="keywords" content="code minifier, javascript minifier, css minifier, html minifier, json minifier, browser minifier, client-side minifier" />
-    <link rel="canonical" href="https://raiaminify.haiere.workers.dev" />
+
+    <title>RaiaMinify | Shrink Code, Keep Logic</title>
+    <meta name="description" content="RaiaMinify is a browser-based code minifier for JavaScript, CSS, HTML, and JSON. Drop a file, get a smaller file, and keep everything local to your device." />
+    <meta name="keywords" content="code minifier, JavaScript minifier, CSS minifier, HTML minifier, JSON minifier, browser minifier, client-side minifier" />
     <meta name="robots" content="index, follow" />
-    <link rel="icon" type="image/webp" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
-    <link rel="apple-touch-icon" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <link rel="canonical" href="https://raiaminify.haiere.workers.dev/" />
     <meta name="theme-color" content="#020617" />
 
-    <!-- Open Graph -->
+    <link rel="icon" type="image/webp" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="RaiaMinify — Shrink Code, Keep Logic" />
-    <meta property="og:description" content="Browser-based code minifier. Drop a file, get a smaller file that behaves exactly the same. Nothing leaves your device." />
-    <meta property="og:url" content="https://raiaminify.haiere.workers.dev" />
+    <meta property="og:url" content="https://raiaminify.haiere.workers.dev/" />
+    <meta property="og:title" content="RaiaMinify | Shrink Code, Keep Logic" />
+    <meta property="og:description" content="Browser-based code minifier for JavaScript, CSS, HTML, and JSON. Runs entirely in your browser." />
     <meta property="og:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="RaiaMinify code minifier preview" />
     <meta property="og:site_name" content="RaiaMinify" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RaiaMinify — Shrink Code, Keep Logic" />
-    <meta name="twitter:description" content="Drop a file, get a smaller file that behaves exactly the same. Runs entirely in your browser." />
+    <meta name="twitter:title" content="RaiaMinify | Shrink Code, Keep Logic" />
+    <meta name="twitter:description" content="Drop a file, get a smaller file, and keep everything local to your device." />
     <meta name="twitter:image" content="https://i.postimg.cc/GmWt2wch/H-blue.webp" />
+    <meta name="twitter:image:alt" content="RaiaMinify code minifier preview" />
 
-    <!-- Schema -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "RaiaMinify",
+            "url": "https://raiaminify.haiere.workers.dev/",
             "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Any (browser-based)",
+            "operatingSystem": "Web browser",
             "description": "Browser-based code minifier for JavaScript, CSS, HTML, and JSON. Runs entirely client-side.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
         }
     </script>
-
-    <!-- Preconnect -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+    />
 
     <style>
-        /* TOKENS*/
+        /* TOKENS & VARIABLES */
         :root {
+            /* --- Colors (unchanged) --- */
             --bg-primary: #020617;
             --bg-secondary: #050B18;
             --bg-card: rgba(148, 163, 184, 0.05);
@@ -71,14 +82,52 @@
             --shadow-glow: 0 0 60px -24px var(--accent-glow);
             --ease: cubic-bezier(0.22, 1, 0.36, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
             --nav-height: 68px;
             --bottom-nav-height: 64px;
             --max-width: 1180px;
+
+            /* TYPOGRAPHY */
+            /* Families */
+            --font-display: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Fira Mono', 'Cascadia Code', 'Menlo', 'Consolas', monospace;
+
+            /* --- Type scale (clamp() for responsiveness) --- */
+            --text-xs: clamp(0.625rem, 0.6rem + 0.15vw, 0.75rem); /* 10–12px */
+            --text-sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem); /* 12–14px */
+            --text-base: clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem); /* 15–17px */
+            --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem); /* 18–22px */
+            --text-xl: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem); /* 22–28px */
+            --text-2xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem); /* 28–40px */
+            --text-3xl: clamp(2.25rem, 1.9rem + 1.8vw, 3.5rem); /* 36–56px */
+            --text-4xl: clamp(2.8rem, 2.3rem + 2.6vw, 4.5rem); /* 45–72px */
+
+            /* --- Leading (line-height) --- */
+            --leading-none: 1;
+            --leading-tight: 1.15;
+            --leading-snug: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.65;
+            --leading-loose: 1.8;
+
+            /* --- Tracking (letter-spacing) --- */
+            --tracking-tight: -0.025em;
+            --tracking-normal: 0;
+            --tracking-wide: 0.02em;
+            --tracking-wider: 0.04em;
+            --tracking-widest: 0.08em;
+
+            /* --- Font weights --- */
+            --weight-light: 300;
+            --weight-regular: 400;
+            --weight-medium: 500;
+            --weight-semibold: 600;
+            --weight-bold: 700;
+            --weight-extrabold: 800;
+            --weight-black: 900;
         }
 
-        /* Reset & Base */
+        /* RESET & BASE */
         *,
         *::before,
         *::after {
@@ -101,6 +150,7 @@
                 transition-duration: 0.001ms !important;
             }
         }
+
         body {
             min-height: 100vh;
             background: var(--bg-primary);
@@ -110,12 +160,123 @@
                 radial-gradient(400px 300px at 50% 80%, rgba(59, 130, 246, 0.04), transparent 50%);
             color: var(--text-primary);
             font-family: var(--font-sans);
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: var(--text-base);
+            font-weight: var(--weight-regular);
+            line-height: var(--leading-relaxed);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
             padding-bottom: calc(var(--bottom-nav-height) + 24px);
         }
+
+        /* --- Consistent heading defaults --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-display);
+            font-weight: var(--weight-bold);
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
+            color: var(--text-primary);
+            margin: 0 0 0.4em;
+        }
+
+        h1 {
+            font-size: var(--text-4xl);
+            font-weight: var(--weight-extrabold);
+        }
+        h2 {
+            font-size: var(--text-3xl);
+            font-weight: var(--weight-bold);
+        }
+        h3 {
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-semibold);
+        }
+        h4 {
+            font-size: var(--text-xl);
+            font-weight: var(--weight-semibold);
+        }
+        h5 {
+            font-size: var(--text-lg);
+            font-weight: var(--weight-semibold);
+        }
+        h6 {
+            font-size: var(--text-base);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-wide);
+        }
+
+        p,
+        li,
+        .text-body {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+            color: var(--text-secondary);
+        }
+
+        small,
+        .text-sm {
+            font-size: var(--text-sm);
+            line-height: var(--leading-normal);
+        }
+        .text-xs {
+            font-size: var(--text-xs);
+            line-height: var(--leading-normal);
+        }
+        .text-lg {
+            font-size: var(--text-lg);
+            line-height: var(--leading-relaxed);
+        }
+        .text-xl {
+            font-size: var(--text-xl);
+            line-height: var(--leading-snug);
+        }
+
+        /* --- Monospace --- */
+        code,
+        pre,
+        .font-mono {
+            font-family: var(--font-mono);
+            font-weight: var(--weight-regular);
+            font-size: 0.9em;
+            line-height: var(--leading-normal);
+            letter-spacing: var(--tracking-normal);
+        }
+
+        /* --- Utility helpers --- */
+        .font-display {
+            font-family: var(--font-display);
+        }
+        .font-sans {
+            font-family: var(--font-sans);
+        }
+        .font-mono {
+            font-family: var(--font-mono);
+        }
+        .tracking-tight {
+            letter-spacing: var(--tracking-tight);
+        }
+        .tracking-wide {
+            letter-spacing: var(--tracking-wide);
+        }
+        .tracking-wider {
+            letter-spacing: var(--tracking-wider);
+        }
+        .leading-tight {
+            line-height: var(--leading-tight);
+        }
+        .leading-snug {
+            line-height: var(--leading-snug);
+        }
+        .leading-relaxed {
+            line-height: var(--leading-relaxed);
+        }
+
         img {
             max-width: 100%;
             display: block;
@@ -141,13 +302,14 @@
             color: #03060D;
         }
 
+        /* SKIP LINK */
         .skip-link {
             position: absolute;
             left: 1rem;
             top: -60px;
             background: var(--accent);
             color: #02070F;
-            font-weight: 600;
+            font-weight: var(--weight-semibold);
             padding: 0.7rem 1.2rem;
             border-radius: var(--radius-sm);
             z-index: 1000;
@@ -157,6 +319,7 @@
             top: 1rem;
         }
 
+        /* CONTAINER */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -209,17 +372,16 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-family: var(--font-display);
+            font-weight: var(--weight-bold);
+            font-size: var(--text-base);
+            letter-spacing: var(--tracking-tight);
         }
         .brand img {
             width: 28px;
             height: 28px;
             border-radius: 6px;
             flex-shrink: 0;
-        }
-        .brand span {
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: -0.01em;
         }
 
         .nav-links {
@@ -230,8 +392,8 @@
         }
         .nav-links a {
             color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
             transition: color 0.2s var(--ease);
             position: relative;
         }
@@ -259,8 +421,8 @@
             gap: 0.4rem;
             background: var(--accent);
             color: #03060D;
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-weight: var(--weight-semibold);
+            font-size: var(--text-sm);
             padding: 0.45rem 1.1rem;
             border-radius: var(--radius-full);
             box-shadow: 0 8px 28px -10px var(--accent-glow);
@@ -332,8 +494,8 @@
             gap: 1rem;
         }
         .nav-mobile-menu a {
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: var(--text-base);
+            font-weight: var(--weight-medium);
             color: var(--text-secondary);
             padding: 0.4rem 0;
             border-bottom: 1px solid var(--border-glass);
@@ -370,9 +532,9 @@
             align-items: center;
             gap: 0.5rem;
             font-family: var(--font-mono);
-            font-size: 0.65rem;
-            font-weight: 500;
-            letter-spacing: 0.12em;
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
+            letter-spacing: var(--tracking-wider);
             text-transform: uppercase;
             color: var(--accent-light);
             background: var(--accent-soft);
@@ -402,10 +564,11 @@
         }
 
         .hero-title {
-            font-weight: 800;
-            font-size: clamp(2.2rem, 5.2vw, 4rem);
-            line-height: 1.04;
-            letter-spacing: -0.025em;
+            font-family: var(--font-display);
+            font-weight: var(--weight-extrabold);
+            font-size: var(--text-4xl);
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
             margin: 0 0 0.8rem;
             max-width: 15ch;
         }
@@ -427,12 +590,13 @@
         }
 
         .hero-sub {
+            font-family: var(--font-sans);
+            font-size: var(--text-lg);
+            font-weight: var(--weight-regular);
+            line-height: var(--leading-relaxed);
             color: var(--text-secondary);
-            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
             max-width: 50ch;
             margin: 0 0 2rem;
-            font-weight: 400;
-            line-height: 1.7;
         }
 
         .hero-grid {
@@ -447,7 +611,9 @@
             }
         }
 
-        /*  CHAMBER  */
+        /* 
+               CHAMBER
+                */
         .chamber {
             padding: clamp(1.2rem, 2.8vw, 2rem);
             border-radius: var(--radius-lg);
@@ -513,19 +679,21 @@
         }
 
         .dropzone h2 {
-            font-size: 1.1rem;
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-tight);
             margin: 0 0 0.2rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
         }
         .dropzone p {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
             color: var(--text-secondary);
-            font-size: 0.85rem;
             margin: 0;
         }
         .dropzone .browse {
             color: var(--accent-light);
-            font-weight: 600;
+            font-weight: var(--weight-semibold);
             text-decoration: underline;
             text-underline-offset: 3px;
             transition: color 0.2s ease;
@@ -535,10 +703,10 @@
         }
         .file-meta-hint {
             font-family: var(--font-mono);
-            font-size: 0.65rem;
+            font-size: var(--text-xs);
             color: var(--text-muted);
             margin-top: 0.6rem;
-            letter-spacing: 0.02em;
+            letter-spacing: var(--tracking-wider);
         }
 
         #file-input {
@@ -581,7 +749,7 @@
         }
         .file-chip .fc-name {
             font-family: var(--font-mono);
-            font-size: 0.78rem;
+            font-size: var(--text-sm);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -589,7 +757,7 @@
         }
         .file-chip .fc-size {
             font-family: var(--font-mono);
-            font-size: 0.7rem;
+            font-size: var(--text-xs);
             color: var(--text-secondary);
         }
         .file-chip button {
@@ -611,17 +779,20 @@
             margin-top: 1rem;
         }
 
+        /* BUTTONS */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            font-weight: 600;
-            font-size: 0.84rem;
+            font-family: var(--font-sans);
+            font-weight: var(--weight-semibold);
+            font-size: var(--text-sm);
             padding: 0.65rem 1.3rem;
             border-radius: var(--radius-full);
             border: 1px solid transparent;
             transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease), opacity 0.2s ease, background 0.2s ease;
+            letter-spacing: var(--tracking-normal);
         }
         .btn:disabled {
             opacity: 0.4;
@@ -669,7 +840,7 @@
             }
         }
 
-        /* READOUT  */
+        /* READOUT */
         .readout {
             padding: 1.4rem 1.6rem;
             border-radius: var(--radius-lg);
@@ -679,19 +850,21 @@
             min-height: 250px;
         }
         .readout h3 {
-            font-size: 0.95rem;
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-tight);
             margin: 0;
-            font-weight: 700;
-            letter-spacing: -0.01em;
         }
+
         .readout-empty {
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: var(--text-sm);
             flex: 1;
             display: flex;
             align-items: center;
             padding: 0.2rem 0;
-            line-height: 1.6;
+            line-height: var(--leading-relaxed);
         }
 
         .gauge {
@@ -715,20 +888,21 @@
         }
 
         .gauge-percent {
-            font-family: var(--font-mono);
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-weight: var(--weight-bold);
             font-size: clamp(2.2rem, 5vw, 3rem);
             color: var(--success);
-            line-height: 1;
-            letter-spacing: -0.02em;
+            line-height: var(--leading-none);
+            letter-spacing: var(--tracking-tight);
             display: flex;
             align-items: baseline;
             gap: 0.2rem;
         }
         .gauge-percent small {
-            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
             color: var(--text-secondary);
-            font-weight: 500;
+            font-weight: var(--weight-medium);
             margin-left: 0.2rem;
         }
 
@@ -760,21 +934,23 @@
             gap: 0.05rem;
         }
         .gauge-row .label {
-            font-size: 0.6rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: var(--tracking-wider);
             color: var(--text-muted);
         }
         .gauge-row .value {
             font-family: var(--font-mono);
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
         }
         .gauge-row .value.after {
             color: var(--success);
         }
 
-        /*  LOG */
+        /* LOG */
         .log-panel {
             padding: 1rem 1.1rem;
             margin-top: 1rem;
@@ -789,14 +965,15 @@
             margin-bottom: 0.5rem;
         }
         .log-head h3 {
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-semibold);
             margin: 0;
             display: flex;
             align-items: center;
             gap: 0.4rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: var(--tracking-wider);
             color: var(--text-secondary);
         }
         .log-head .dot {
@@ -809,12 +986,13 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 0.68rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
             cursor: pointer;
             text-decoration: underline;
             text-underline-offset: 2px;
             transition: color 0.2s ease;
-            font-weight: 500;
         }
         .log-toggle:hover {
             color: #fff;
@@ -822,8 +1000,8 @@
 
         .log-body {
             font-family: var(--font-mono);
-            font-size: 0.7rem;
-            line-height: 1.8;
+            font-size: var(--text-xs);
+            line-height: var(--leading-loose);
             color: #A7B4C6;
             max-height: 150px;
             overflow-y: auto;
@@ -852,13 +1030,13 @@
         .log-body .t {
             color: #4A5A72;
             margin-right: 0.5rem;
-            font-weight: 400;
+            font-weight: var(--weight-regular);
         }
         .log-body .ok {
             color: var(--success);
         }
 
-        /*  FEATURES */
+        /* FEATURES */
         .section {
             padding: 4rem 0;
         }
@@ -870,15 +1048,17 @@
             margin-bottom: 0.6rem;
         }
         .section-head h2 {
-            font-weight: 800;
-            font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+            font-family: var(--font-display);
+            font-weight: var(--weight-extrabold);
+            font-size: var(--text-3xl);
+            letter-spacing: var(--tracking-tight);
             margin: 0 0 0.4rem;
-            letter-spacing: -0.02em;
         }
         .section-head p {
+            font-family: var(--font-sans);
+            font-size: var(--text-lg);
             color: var(--text-secondary);
             margin: 0;
-            font-size: 0.95rem;
         }
 
         .feature-grid {
@@ -932,16 +1112,18 @@
             height: 18px;
         }
         .feature-card h3 {
-            font-size: 0.92rem;
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-tight);
             margin: 0 0 0.25rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
         }
         .feature-card p {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
             color: var(--text-secondary);
-            font-size: 0.82rem;
             margin: 0;
-            line-height: 1.6;
+            line-height: var(--leading-relaxed);
         }
 
         /* STEPS */
@@ -977,22 +1159,25 @@
         .step .s-num {
             font-family: var(--font-mono);
             color: var(--accent-light);
-            font-size: 0.7rem;
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
             margin-bottom: 0.4rem;
             display: block;
-            font-weight: 500;
-            letter-spacing: 0.04em;
+            letter-spacing: var(--tracking-wider);
         }
         .step h3 {
-            font-size: 0.9rem;
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            font-weight: var(--weight-semibold);
+            letter-spacing: var(--tracking-tight);
             margin: 0 0 0.25rem;
-            font-weight: 700;
         }
         .step p {
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
             color: var(--text-secondary);
-            font-size: 0.8rem;
             margin: 0;
-            line-height: 1.6;
+            line-height: var(--leading-relaxed);
         }
 
         /* FOOTER */
@@ -1019,15 +1204,29 @@
             border-radius: 5px;
         }
         .footer-brand span {
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-family: var(--font-display);
+            font-weight: var(--weight-bold);
+            font-size: var(--text-base);
+            letter-spacing: var(--tracking-tight);
         }
         footer small {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
             color: var(--text-muted);
-            font-size: 0.74rem;
         }
-        
-        /* Cookie Banner */
+        .footer-links a {
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* 
+               COOKIE BANNER
+                */
         #cookie-banner {
             position: fixed;
             bottom: 0;
@@ -1058,21 +1257,18 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 13px;
-            color: var(--slate-bright);
-        }
-        .cookie-text i {
-            color: var(--blue);
-            font-size: 1.2rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
         }
         .cookie-text a {
-            color: var(--blue);
+            color: var(--accent-light);
             text-decoration: none;
             border-bottom: 1px dotted rgba(59, 130, 246, 0.2);
-            transition: border-color var(--transition);
+            transition: border-color 0.2s ease;
         }
         .cookie-text a:hover {
-            border-bottom-color: var(--blue);
+            border-bottom-color: var(--accent-light);
         }
         .cookie-actions {
             display: flex;
@@ -1083,14 +1279,14 @@
             padding: 8px 22px;
             border-radius: var(--radius-sm);
             border: none;
-            font-family: var(--sans);
-            font-size: 13px;
-            font-weight: 500;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
             cursor: pointer;
-            transition: all var(--transition);
+            transition: all 0.2s var(--ease);
         }
         .btn-cookie-accept {
-            background: var(--blue);
+            background: var(--accent);
             color: #fff;
             box-shadow: 0 2px 20px rgba(59, 130, 246, 0.25);
         }
@@ -1101,12 +1297,12 @@
         }
         .btn-cookie-decline {
             background: rgba(255, 255, 255, 0.04);
-            color: var(--slate);
+            color: var(--text-secondary);
             border: 1px solid rgba(148, 163, 184, 0.08);
         }
         .btn-cookie-decline:hover {
             background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
+            color: #fff;
         }
 
         /* BOTTOM NAV */
@@ -1136,13 +1332,15 @@
             justify-content: center;
             gap: 0.1rem;
             color: var(--text-secondary);
-            font-size: 0.55rem;
-            font-weight: 500;
+            font-family: var(--font-sans);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
             padding: 0.2rem 0.4rem;
             border-radius: var(--radius-sm);
             transition: color 0.2s var(--ease), transform 0.25s var(--ease-spring);
             min-width: 48px;
             text-decoration: none;
+            letter-spacing: var(--tracking-wide);
         }
         .bottom-nav a:hover,
         .bottom-nav a:focus-visible {
@@ -1162,8 +1360,8 @@
         }
         .bottom-nav a span {
             line-height: 1;
-            font-size: 0.55rem;
-            letter-spacing: 0.02em;
+            font-size: var(--text-xs);
+            letter-spacing: var(--tracking-wide);
         }
 
         @media (min-width: 741px) {
@@ -1175,7 +1373,7 @@
             }
         }
 
-        /*  TOAST  */
+        /* TOAST */
         .toast-region {
             position: fixed;
             bottom: calc(var(--bottom-nav-height) + 28px);
@@ -1200,7 +1398,8 @@
             border: 1px solid var(--border-glass);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            font-size: 0.8rem;
+            font-family: var(--font-sans);
+            font-size: var(--text-sm);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -1232,7 +1431,7 @@
             }
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE FINE-TUNE */
         @media (max-width: 740px) {
             .container {
                 padding-inline: 1rem;
@@ -1249,7 +1448,7 @@
             .chamber-actions .btn {
                 flex: 1;
                 min-width: 110px;
-                font-size: 0.76rem;
+                font-size: var(--text-sm);
                 padding: 0.55rem 0.9rem;
             }
             .feature-card {
@@ -1259,13 +1458,13 @@
                 padding: 1rem 0.9rem;
             }
             .hero-title {
-                font-size: clamp(1.8rem, 8vw, 2.4rem);
+                font-size: var(--text-3xl);
             }
             .dropzone h2 {
-                font-size: 1rem;
+                font-size: var(--text-lg);
             }
             .dropzone p {
-                font-size: 0.8rem;
+                font-size: var(--text-sm);
             }
         }
 
@@ -1326,248 +1525,252 @@
     </div>
 
     <!-- MAIN -->
-<main id="main">
-    <div id="top"></div>
+    <main id="main">
+        <div id="top"></div>
 
-    <header class="hero">
-        <div class="container hero-grid" id="chamber-section">
+        <header class="hero">
+            <div class="container hero-grid" id="chamber-section">
 
-            <div>
-                <span class="eyebrow">
-                    <span class="dot" aria-hidden="true"></span>100% In-Browser Processing
-                </span>
-                <h1 class="hero-title">
-                    Make your code smaller, <span class="accent">without breaking a thing.</span>
-                </h1>
-                <p class="hero-sub">
-                    Drop your file here to instantly strip away spaces, extra lines, and comments. Simple, fast, and completely private your files never leave your device.
-                </p>
+                <div>
+                    <span class="eyebrow">
+                        <span class="dot" aria-hidden="true"></span>100% In Browser Processing
+                    </span>
+                    <h1 class="hero-title">
+                        Make your code smaller, <span class="accent">without breaking a thing.</span>
+                    </h1>
+                    <p class="hero-sub">
+                        Drop your file here to instantly strip away spaces, extra lines, and comments. Simple, fast, and completely private your files never leave your device.
+                    </p>
 
-                <section class="chamber glass" aria-labelledby="dropzone-title">
-                    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-describedby="dropzone-hint" aria-label="Upload file to compress">
-                        <div class="chamber-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
-                            </svg>
+                    <section class="chamber glass" aria-labelledby="dropzone-title">
+                        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-describedby="dropzone-hint" aria-label="Upload file to compress">
+                            <div class="chamber-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
+                                </svg>
+                            </div>
+                            <h2 id="dropzone-title">Drag &amp; drop your file here</h2>
+                            <p>or <span class="browse">choose from your computer</span></p>
+                            <p class="file-meta-hint" id="dropzone-hint">Supports .js · .css · .html · .json</p>
+                            <input type="file" id="file-input" aria-label="Choose a file to minify" />
                         </div>
-                        <h2 id="dropzone-title">Drag &amp; drop your file here</h2>
-                        <p>or <span class="browse">choose from your computer</span></p>
-                        <p class="file-meta-hint" id="dropzone-hint">Supports .js · .css · .html · .json</p>
-                        <input type="file" id="file-input" aria-label="Choose a file to minify" />
+
+                        <div id="file-chip-region"></div>
+
+                        <div class="chamber-actions">
+                            <button type="button" class="btn btn-primary" id="minify-btn" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/>
+                                </svg>
+                                <span id="minify-btn-label">Compress File</span>
+                            </button>
+                            <button type="button" class="btn btn-ghost" id="download-btn" disabled>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
+                                </svg>
+                                Download Result
+                            </button>
+                        </div>
+
+                        <div class="log-panel">
+                            <div class="log-head">
+                                <h3><span class="dot" aria-hidden="true"></span>Status Log</h3>
+                                <button type="button" class="log-toggle" id="log-clear">Clear Log</button>
+                            </div>
+                            <div class="log-body" id="log-body" role="log" aria-live="polite" aria-relevant="additions">
+                                <div><span class="t">00:00:00</span>Ready. Waiting for a file…</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="readout glass-strong" aria-labelledby="readout-title">
+                    <h3 id="readout-title">Optimization Stats</h3>
+
+                    <div class="readout-empty" id="readout-empty">
+                        Your savings, line counts, and new file size will show up here after compression.
                     </div>
 
-                    <div id="file-chip-region"></div>
-
-                    <div class="chamber-actions">
-                        <button type="button" class="btn btn-primary" id="minify-btn" disabled>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/>
-                            </svg>
-                            <span id="minify-btn-label">Compress File</span>
-                        </button>
-                        <button type="button" class="btn btn-ghost" id="download-btn" disabled>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/>
-                            </svg>
-                            Download Result
-                        </button>
-                    </div>
-
-                    <div class="log-panel">
-                        <div class="log-head">
-                            <h3><span class="dot" aria-hidden="true"></span>Status Log</h3>
-                            <button type="button" class="log-toggle" id="log-clear">Clear Log</button>
+                    <div class="gauge" id="gauge">
+                        <div class="gauge-percent">
+                            <span id="gauge-percent-value">0%</span>
+                            <small>size reduction</small>
                         </div>
-                        <div class="log-body" id="log-body" role="log" aria-live="polite" aria-relevant="additions">
-                            <div><span class="t">00:00:00</span>Ready. Waiting for a file…</div>
+                        <div class="gauge-bar">
+                            <div class="gauge-bar-fill" id="gauge-bar-fill"></div>
+                        </div>
+                        <div class="gauge-rows">
+                            <div class="gauge-row">
+                                <span class="label">Original Size</span>
+                                <span class="value" id="stat-size-before">—</span>
+                            </div>
+                            <div class="gauge-row">
+                                <span class="label">New Size</span>
+                                <span class="value after" id="stat-size-after">—</span>
+                            </div>
+                            <div class="gauge-row">
+                                <span class="label">Original Lines</span>
+                                <span class="value" id="stat-lines-before">—</span>
+                            </div>
+                            <div class="gauge-row">
+                                <span class="label">New Lines</span>
+                                <span class="value after" id="stat-lines-after">—</span>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </aside>
+
             </div>
+        </header>
 
-            <aside class="readout glass-strong" aria-labelledby="readout-title">
-                <h3 id="readout-title">Optimization Stats</h3>
-                
-                <div class="readout-empty" id="readout-empty">
-                    Your savings, line counts, and new file size will show up here after compression.
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Why Use RaiaMinify</span>
+                    <h2>Smaller files mean faster loading websites.</h2>
+                    <p>Clean up unnecessary bloat while keeping your code completely safe.</p>
                 </div>
 
-                <div class="gauge" id="gauge">
-                    <div class="gauge-percent">
-                        <span id="gauge-percent-value">0%</span>
-                        <small>size reduction</small>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
+                        </div>
+                        <h3>Removes Extra Spaces</h3>
+                        <p>Strips out unnecessary gaps, tabs, and spaces without breaking your layout or code structure.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg>
+                        </div>
+                        <h3>Cleans Blank Lines</h3>
+                        <p>Collapses empty lines down to compact your file size as much as possible.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        </div>
+                        <h3>Smart Comment Removal</h3>
+                        <p>Safely deletes developer notes while protecting critical text, links, and code strings.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9v10.2L12 22l-9-4.9V6.9z"/></svg>
+                        </div>
+                        <h3>Language-Aware</h3>
+                        <p>Uses tailor-made rules for JavaScript, CSS, HTML, and JSON so your code always works.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
+                        </div>
+                        <h3>100% Private</h3>
+                        <p>Everything is calculated right inside your web browser. Your code is never sent to any server.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="f-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg>
+                        </div>
+                        <h3>Fast &amp; Efficient</h3>
+                        <p>Optimized to handle large files and thousands of lines of code seamlessly without crashing.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section" id="how">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How It Works</span>
+                    <h2>Four simple steps. Zero setup.</h2>
+                    <p>Just select your file and let the app handle the rest.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <span class="s-num">01</span>
+                        <h3>Select your file</h3>
+                        <p>Drag your file into the box or select it from your device.</p>
                     </div>
-                    <div class="gauge-bar">
-                        <div class="gauge-bar-fill" id="gauge-bar-fill"></div>
+                    <div class="step">
+                        <span class="s-num">02</span>
+                        <h3>Auto-Detect</h3>
+                        <p>The app automatically recognizes whether it's JS, CSS, HTML, or JSON.</p>
                     </div>
-                    <div class="gauge-rows">
-                        <div class="gauge-row">
-                            <span class="label">Original Size</span>
-                            <span class="value" id="stat-size-before">—</span>
-                        </div>
-                        <div class="gauge-row">
-                            <span class="label">New Size</span>
-                            <span class="value after" id="stat-size-after">—</span>
-                        </div>
-                        <div class="gauge-row">
-                            <span class="label">Original Lines</span>
-                            <span class="value" id="stat-lines-before">—</span>
-                        </div>
-                        <div class="gauge-row">
-                            <span class="label">New Lines</span>
-                            <span class="value after" id="stat-lines-after">—</span>
-                        </div>
+                    <div class="step">
+                        <span class="s-num">03</span>
+                        <h3>Instant Processing</h3>
+                        <p>Redundant spaces and comments are removed right in your browser.</p>
+                    </div>
+                    <div class="step">
+                        <span class="s-num">04</span>
+                        <h3>Download</h3>
+                        <p>Save your lightweight, optimized file ready for immediate use.</p>
                     </div>
                 </div>
-            </aside>
+            </div>
+        </section>
+    </main>
 
-        </div>
-    </header>
-
-    <section class="section" id="features">
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <div class="section-head">
-                <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Why Use RaiaMinify</span>
-                <h2>Smaller files mean faster loading websites.</h2>
-                <p>Clean up unnecessary bloat while keeping your code completely safe.</p>
-            </div>
-
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
-                    </div>
-                    <h3>Removes Extra Spaces</h3>
-                    <p>Strips out unnecessary gaps, tabs, and spaces without breaking your layout or code structure.</p>
-                </article>
-
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg>
-                    </div>
-                    <h3>Cleans Blank Lines</h3>
-                    <p>Collapses empty lines down to compact your file size as much as possible.</p>
-                </article>
-
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                    </div>
-                    <h3>Smart Comment Removal</h3>
-                    <p>Safely deletes developer notes while protecting critical text, links, and code strings.</p>
-                </article>
-
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9v10.2L12 22l-9-4.9V6.9z"/></svg>
-                    </div>
-                    <h3>Language-Aware</h3>
-                    <p>Uses tailor-made rules for JavaScript, CSS, HTML, and JSON so your code always works.</p>
-                </article>
-
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>
-                    </div>
-                    <h3>100% Private</h3>
-                    <p>Everything is calculated right inside your web browser. Your code is never sent to any server.</p>
-                </article>
-
-                <article class="feature-card">
-                    <div class="f-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg>
-                    </div>
-                    <h3>Fast &amp; Efficient</h3>
-                    <p>Optimized to handle large files and thousands of lines of code seamlessly without crashing.</p>
-                </article>
+            <div class="footer-row">
+                <div class="footer-brand">
+                    <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="RaiaMinify Logo" loading="lazy" decoding="async" width="22" height="22" />
+                    <span>RaiaMinify</span>
+                </div>
+                <div class="footer-links" style="display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;">
+                    <small style="color:var(--text-secondary);">Lighter Code, Faster Web</small>
+                    <a href="https://raia-footer.netlify.app/#privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    <a href="https://raia-footer.netlify.app/#terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                </div>
+                <small>&copy; 2026 Haiere</small>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <section class="section" id="how">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow"><span class="dot" aria-hidden="true"></span>How It Works</span>
-                <h2>Four simple steps. Zero setup.</h2>
-                <p>Just select your file and let the app handle the rest.</p>
-            </div>
-            
-            <div class="steps">
-                <div class="step">
-                    <span class="s-num">01</span>
-                    <h3>Select your file</h3>
-                    <p>Drag your file into the box or select it from your device.</p>
-                </div>
-                <div class="step">
-                    <span class="s-num">02</span>
-                    <h3>Auto-Detect</h3>
-                    <p>The app automatically recognizes whether it's JS, CSS, HTML, or JSON.</p>
-                </div>
-                <div class="step">
-                    <span class="s-num">03</span>
-                    <h3>Instant Processing</h3>
-                    <p>Redundant spaces and comments are removed right in your browser.</p>
-                </div>
-                <div class="step">
-                    <span class="s-num">04</span>
-                    <h3>Download</h3>
-                    <p>Save your lightweight, optimized file ready for immediate use.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav" aria-label="Quick navigation">
+        <a href="#top" aria-label="Home">
+            <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="#chamber-section" aria-label="Minify" class="active">
+            <svg viewBox="0 0 24 24"><path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/></svg>
+            <span>Compress</span>
+        </a>
+        <a href="#features" aria-label="Features">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
+            <span>Features</span>
+        </a>
+        <a href="#how" aria-label="How it works">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>How it Works</span>
+        </a>
+    </nav>
 
-<footer class="site-footer" role="contentinfo">
-    <div class="container">
-        <div class="footer-row">
-            <div class="footer-brand">
-                <img src="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" alt="RaiaMinify Logo" loading="lazy" decoding="async" width="22" height="22" />
-                <span>RaiaMinify</span>
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <span>We use cookies to ensure you get the best experience. Read our <a href="https://haiere.github.io/raia-footer/#cookie" rel="noopener noreferrer">Cookie Policy</a>.</span>
             </div>
-            <div class="footer-links" style="display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;">
-                <small style="color:var(--text-secondary);">Lighter Code, Faster Web</small>
-                <a href="https://raia-footer.netlify.app/#privacy" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);font-size:0.74rem;">Privacy Policy</a>
-                <a href="https://raia-footer.netlify.app/#terms" target="_blank" rel="noopener noreferrer" style="color:var(--text-muted);font-size:0.74rem;">Terms of Service</a>
+            <div class="cookie-actions">
+                <button type="button" class="btn-cookie btn-cookie-decline" onclick="declineCookies()">Decline</button>
+                <button type="button" class="btn-cookie btn-cookie-accept" onclick="acceptCookies()">Accept</button>
             </div>
-            <small style="color:var(--text-muted);">&copy; 2026 Haiere</small>
         </div>
     </div>
-</footer>
 
-<nav class="bottom-nav" aria-label="Quick navigation">
-    <a href="#top" aria-label="Home">
-        <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span>Home</span>
-    </a>
-    <a href="#chamber-section" aria-label="Minify" class="active">
-        <svg viewBox="0 0 24 24"><path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10l7-7"/><path d="M3 21l7-7"/></svg>
-        <span>Compress</span>
-    </a>
-    <a href="#features" aria-label="Features">
-        <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h12"/></svg>
-        <span>Features</span>
-    </a>
-    <a href="#how" aria-label="How it works">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        <span>How it Works</span>
-    </a>
-</nav>
-
-<div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
-    <div class="cookie-content">
-        <div class="cookie-text">
-            <i class="fas fa-cookie-bite" aria-hidden="true"></i>
-            <span>We use cookies to ensure you get the best experience on our website. Read our <a href="https://haiere.github.io/raia-footer/#cookie" rel="noopener noreferrer">Cookie Policy</a>.</span>
-        </div>
-        <div class="cookie-actions">
-            <button type="button" class="btn-cookie btn-cookie-decline" onclick="declineCookies()">Decline</button>
-            <button type="button" class="btn-cookie btn-cookie-accept" onclick="acceptCookies()">Accept</button>
-        </div>
-    </div>
-</div>
-
-    <!-- Toast -->
+    <!-- TOAST -->
     <div class="toast-region" id="toast-region" aria-live="polite"></div>
 
     <!-- SCRIPT-->
@@ -2060,6 +2263,26 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navMobileMenu.classList.contains('open')) toggleNav(true);
             });
+
+            /* ---------- cookie banner ---------- */
+            window.acceptCookies = function() {
+                document.getElementById('cookie-banner').classList.add('hidden');
+                document.cookie = "cookieConsent=true; max-age=31536000; path=/";
+            };
+            window.declineCookies = function() {
+                document.getElementById('cookie-banner').classList.add('hidden');
+                document.cookie = "cookieConsent=false; max-age=31536000; path=/";
+            };
+
+            function initCookieBanner() {
+                const banner = document.getElementById('cookie-banner');
+                if (document.cookie.includes('cookieConsent=')) {
+                    banner.classList.add('hidden');
+                } else {
+                    banner.classList.remove('hidden');
+                }
+            }
+            initCookieBanner();
 
         })();
     </script>
