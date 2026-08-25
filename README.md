@@ -1,6 +1,11 @@
 # RaiaMinify
 
-A browser-based code minifier for JavaScript, CSS, HTML, and JSON. All processing happens locally—no uploads, no servers.
+[![Version](https://img.shields.io/badge/version-1.0-blue)](https://github.com/Haiere/raia-minify/releases)
+[![License](https://img.shields.io/badge/license-MIT-yellow)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/website-live-green)](https://raia-minify.haiere.workers.dev)
+[![Privacy](https://img.shields.io/badge/privacy-100%25%20client--side-success)](#)
+
+> A browser-based code minifier for JavaScript, CSS, HTML, and JSON. All processing happens locally—no uploads, no servers.
 
 RaiaMinify is a client-side tool that strips unnecessary whitespace, blank lines, and comments from your code files. It is designed for developers who need a quick, private way to reduce file size before deployment or sharing.
 
@@ -10,14 +15,14 @@ The tool automatically detects the file type (JavaScript, CSS, HTML, or JSON) an
 
 ## Features
 
-- Automatic file type detection — Recognises `.js`, `.css`, `.html`, `.json`, and common variants (`.mjs`, `.ts`, `.jsx`, `.htm`, etc.).
-- Tailored minification — Applies specific rules for each language to preserve functional integrity.
-- Comment and whitespace removal — Eliminates developer notes, extra spaces, tabs, and blank lines.
-- Protection of string literals and templates — Ensures that quoted strings, regex patterns, and template literals remain intact.
-- HTML-aware processing — Preserves content inside `<pre>`, `<textarea>`, `<style>`, and `<script>` blocks while minifying surrounding markup.
-- Size and line count stats — Displays original vs. minified sizes, line counts, and percentage reduction.
-- One-click download — Saves the minified result with a `.min` suffix.
-- Zero external dependencies — Runs entirely with native browser APIs.
+- **Automatic file type detection** — Recognises `.js`, `.css`, `.html`, `.json`, and common variants (`.mjs`, `.ts`, `.jsx`, `.htm`, etc.).
+- **Tailored minification** — Applies specific rules for each language to preserve functional integrity.
+- **Comment and whitespace removal** — Eliminates developer notes, extra spaces, tabs, and blank lines.
+- **Protection of string literals and templates** — Ensures that quoted strings, regex patterns, and template literals remain intact.
+- **HTML-aware processing** — Preserves content inside `<pre>`, `<textarea>`, `<style>`, and `<script>` blocks while minifying surrounding markup.
+- **Size and line count stats** — Displays original vs. minified sizes, line counts, and percentage reduction.
+- **One-click download** — Saves the minified result with a `.min` suffix.
+- **Zero external dependencies** — Runs entirely with native browser APIs.
 
 ---
 
@@ -44,11 +49,11 @@ If you wish to host it yourself, place the file on any static web server. All re
 
 ### Step-by-step
 
-1. Select a file — Drag and drop a file onto the drop zone, or click the zone to open a file picker.
-2. Review the file — The tool displays the file name, size, and line count.
-3. Minify — Click the "Compress File" button. The processing happens instantly in your browser.
-4. Review the results — The stats panel shows the original and minified sizes, line counts, and the percentage reduction.
-5. Download — Click the "Download Result" button to save the minified file with a `.min` suffix.
+1. **Select a file** — Drag and drop a file onto the drop zone, or click the zone to open a file picker.
+2. **Review the file** — The tool displays the file name, size, and line count.
+3. **Minify** — Click the "Compress File" button. The processing happens instantly in your browser.
+4. **Review the results** — The stats panel shows the original and minified sizes, line counts, and the percentage reduction.
+5. **Download** — Click the "Download Result" button to save the minified file with a `.min` suffix.
 
 ### Supported file types
 
