@@ -1,7 +1,10 @@
+/* ============================================================
+   RaiaMinify v1.0.1 — script.js
+   ============================================================ */
 (function () {
     'use strict';
 
-    /*HELPERS & UTILITIES*/
+    /* ---------------- HELPERS ---------------- */
     function fmtBytes(bytes) {
         if (bytes === 0) return '0 B';
         const u = ['B', 'KB', 'MB', 'GB'];
@@ -38,8 +41,9 @@
         return pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ':' + pad2(d.getSeconds());
     }
 
-    /*MINIFICATION ENGINES*/
-    // --- JavaScript Minifier ---
+    /* ---------------- MINIFICATION ENGINES ---------------- */
+
+    /* JS */
     const JS_PRE_KW = new Set([
         'return', 'typeof', 'instanceof', 'in', 'of', 'new', 'delete', 'void', 'throw',
         'case', 'do', 'else', 'yield', 'await', 'extends', 'default'
@@ -57,28 +61,24 @@
 
         while (i < n) {
             const c = src[i];
-            
-            // Single-line comments
+
             if (c === '/' && src[i + 1] === '/') {
                 while (i < n && src[i] !== '\n') i++;
                 continue;
             }
-            // Multi-line comments
             if (c === '/' && src[i + 1] === '*') {
                 i += 2;
                 while (i < n && !(src[i] === '*' && src[i + 1] === '/')) i++;
                 i += 2;
                 continue;
             }
-            // Strings (single and double quotes)
             if (c === '"' || c === "'") {
                 const q = c;
                 out.push(q);
                 i++;
                 while (i < n && src[i] !== q) {
                     if (src[i] === '\\') {
-                        out.push(src[i]);
-                        i++;
+                        out.push(src[i]); i++;
                         if (i < n) { out.push(src[i]); i++; }
                         continue;
                     }
@@ -90,22 +90,16 @@
                 last = ')';
                 continue;
             }
-            // Template Literals
             if (c === '`') {
                 out.push(c);
                 i++;
                 while (i < n) {
                     if (src[i] === '\\') {
-                        out.push(src[i]);
-                        i++;
+                        out.push(src[i]); i++;
                         if (i < n) { out.push(src[i]); i++; }
                         continue;
                     }
-                    if (src[i] === '`') {
-                        out.push(src[i]);
-                        i++;
-                        break;
-                    }
+                    if (src[i] === '`') { out.push(src[i]); i++; break; }
                     if (src[i] === '$' && src[i + 1] === '{') {
                         out.push('${');
                         i += 2;
@@ -125,7 +119,6 @@
                 last = ')';
                 continue;
             }
-            // Regex literals
             if (c === '/' && (JS_PRE_PUNCT.has(last) || JS_PRE_KW.has(last))) {
                 let j = i + 1, inClass = false, safe = true;
                 while (j < n) {
@@ -145,7 +138,6 @@
                     continue;
                 }
             }
-            // Identifiers
             if (isIdStart(c) || /[0-9]/.test(c)) {
                 let j = i;
                 while (j < n && isIdPart(src[j])) j++;
@@ -155,7 +147,6 @@
                 last = JS_PRE_KW.has(w) ? w : ')';
                 continue;
             }
-            // Spaces
             if (c === ' ' || c === '\t') {
                 let j = i;
                 while (j < n && (src[j] === ' ' || src[j] === '\t')) j++;
@@ -164,7 +155,6 @@
                 i = j;
                 continue;
             }
-            // Newlines
             if (c === '\n' || c === '\r') {
                 let j = i;
                 while (j < n && (src[j] === '\n' || src[j] === '\r' || src[j] === ' ' || src[j] === '\t')) j++;
@@ -181,7 +171,7 @@
         return r.replace(/^\n+/, '').replace(/\n+$/, '\n');
     }
 
-    // --- CSS Minifier ---
+    /* CSS */
     function minifyCSS(src) {
         let i = 0, n = src.length, out = [];
         while (i < n) {
@@ -198,8 +188,7 @@
                 i++;
                 while (i < n && src[i] !== q) {
                     if (src[i] === '\\') {
-                        out.push(src[i]);
-                        i++;
+                        out.push(src[i]); i++;
                         if (i < n) { out.push(src[i]); i++; }
                         continue;
                     }
@@ -229,7 +218,7 @@
         return r.replace(/;+}/g, '}').replace(/^\s+|\s+$/g, '');
     }
 
-    // --- HTML Minifier ---
+    /* HTML */
     function minifyHTML(src) {
         const vaults = [];
         function vault(s) {
@@ -266,7 +255,7 @@
         return work.replace(/\u0000VAULT(\d+)\u0000/g, (m, idx) => vaults[Number(idx)]);
     }
 
-    // --- JSON & Generic Minifiers ---
+    /* JSON & generic */
     function minifyJSON(src) {
         return JSON.stringify(JSON.parse(src));
     }
@@ -294,7 +283,7 @@
         return { fn: minifyGeneric, label: 'generic' };
     }
 
-    /*UI CONTROLLER & DOM HANDLERS*/
+    /* ---------------- DOM ---------------- */
     const DZ = document.getElementById('dropzone');
     const FI = document.getElementById('file-input');
     const FCR = document.getElementById('file-chip-region');
@@ -321,12 +310,14 @@
         resultText = null,
         resultFilename = null;
 
-    /* Navbar scroll effect */
-    window.addEventListener('scroll', () => {
-        SN.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
+    /* ---------------- NAV SCROLL ---------------- */
+    if (SN) {
+        window.addEventListener('scroll', () => {
+            SN.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+    }
 
-    /* Logging */
+    /* ---------------- LOG ---------------- */
     function log(msg, ok) {
         const row = document.createElement('div');
         if (ok) row.classList.add('ok');
@@ -335,7 +326,7 @@
         LB.scrollTop = LB.scrollHeight;
     }
 
-    /* Toast Notification */
+    /* ---------------- TOAST ---------------- */
     function toast(msg, err) {
         const el = document.createElement('div');
         el.className = 'toast' + (err ? ' error' : '');
@@ -351,12 +342,14 @@
         setTimeout(() => { el.remove(); }, 3600);
     }
 
-    LC.addEventListener('click', () => {
-        LB.innerHTML = '';
-        log('Log cleared.');
-    });
+    if (LC) {
+        LC.addEventListener('click', () => {
+            LB.innerHTML = '';
+            log('Log cleared.');
+        });
+    }
 
-    /* File Chips UI */
+    /* ---------------- FILE CHIP ---------------- */
     function renderChip() {
         if (!currentFile) { FCR.innerHTML = ''; return; }
         FCR.innerHTML =
@@ -369,7 +362,8 @@
             '</button>' +
             '</div>';
 
-        document.getElementById('fc-remove').addEventListener('click', (e) => {
+        const rm = document.getElementById('fc-remove');
+        if (rm) rm.addEventListener('click', (e) => {
             e.stopPropagation();
             resetAll();
         });
@@ -389,7 +383,7 @@
         GBF.style.width = '0%';
     }
 
-    /* File Loading Handler */
+    /* ---------------- FILE LOAD ---------------- */
     async function handleFile(file) {
         if (!file) return;
         currentFile = file;
@@ -412,7 +406,7 @@
         }
     }
 
-    /* Dropzone Drag & Drop Events */
+    /* ---------------- DROPZONE EVENTS ---------------- */
     DZ.addEventListener('click', () => FI.click());
     DZ.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -443,7 +437,7 @@
         if (f) handleFile(f);
     });
 
-    /* Compression Trigger */
+    /* ---------------- COMPRESS ---------------- */
     MB.addEventListener('click', () => {
         if (!currentFile || currentText === null) return;
         MB.disabled = true;
@@ -502,7 +496,7 @@
         }, 30);
     });
 
-    /* Download Action */
+    /* ---------------- DOWNLOAD ---------------- */
     DB.addEventListener('click', () => {
         if (resultText === null) return;
         const blob = new Blob([resultText], { type: 'text/plain;charset=utf-8' });
@@ -517,14 +511,15 @@
         log('Downloaded "' + (resultFilename || 'minified.txt') + '".', true);
     });
 
-    /* Mobile Navigation Drawer Toggle */
+    /* ---------------- MOBILE NAV ---------------- */
     const navToggle = document.getElementById('navToggle');
     const navOverlay = document.getElementById('navOverlay');
     const navMobileMenu = document.getElementById('navMobileMenu');
 
-    function toggleNav(open) {
-        const isOpen = open !== undefined ? open : navMobileMenu.classList.contains('open');
-        if (isOpen) {
+    function toggleNav(forceClose) {
+        const isOpen = navMobileMenu.classList.contains('open');
+        const shouldClose = forceClose === true || isOpen;
+        if (shouldClose) {
             navMobileMenu.classList.remove('open');
             navOverlay.classList.remove('open');
             navToggle.setAttribute('aria-expanded', 'false');
@@ -535,27 +530,30 @@
         }
     }
 
-    navToggle.addEventListener('click', () => toggleNav());
-    navOverlay.addEventListener('click', () => toggleNav(true));
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => toggleNav(true));
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMobileMenu.classList.contains('open')) toggleNav(true);
-    });
+    if (navToggle && navOverlay && navMobileMenu) {
+        navToggle.addEventListener('click', () => toggleNav());
+        navOverlay.addEventListener('click', () => toggleNav(true));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => toggleNav(true));
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMobileMenu.classList.contains('open')) toggleNav(true);
+        });
+    }
 
-    /* Cookie Banner Management */
+    /* ---------------- COOKIES ---------------- */
     window.acceptCookies = function () {
         document.getElementById('cookie-banner').classList.add('hidden');
-        document.cookie = "cookieConsent=true; max-age=31536000; path=/";
+        document.cookie = "cookieConsent=true; max-age=31536000; path=/; SameSite=Lax";
     };
     window.declineCookies = function () {
         document.getElementById('cookie-banner').classList.add('hidden');
-        document.cookie = "cookieConsent=false; max-age=31536000; path=/";
+        document.cookie = "cookieConsent=false; max-age=31536000; path=/; SameSite=Lax";
     };
 
     function initCookieBanner() {
         const banner = document.getElementById('cookie-banner');
+        if (!banner) return;
         if (document.cookie.includes('cookieConsent=')) {
             banner.classList.add('hidden');
         } else {
@@ -563,5 +561,9 @@
         }
     }
     initCookieBanner();
+
+    /* ---------------- DYNAMIC YEAR ---------------- */
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 })();
